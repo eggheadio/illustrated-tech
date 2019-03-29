@@ -49,8 +49,6 @@ class WhatTheForkTemplate extends React.Component {
               >
                 {wtf.frontmatter.title}
               </h1>
-              
-
               <MDXRenderer >
                 {wtf.code.body}
               </MDXRenderer>
