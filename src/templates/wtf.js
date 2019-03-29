@@ -63,7 +63,9 @@ class WhatTheForkTemplate extends React.Component {
                 </h5>
               </div>
 
-              <MDXRenderer>{wtf.code.body}</MDXRenderer>
+              <MDXRenderer >
+                {wtf.code.body}
+              </MDXRenderer>
             </div>
           </div>
           <div
