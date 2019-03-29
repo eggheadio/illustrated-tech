@@ -16,7 +16,7 @@ h3 {
   margin-top: 1.2em;
 }
 p {
-  font-family: 'freight-sans-pro', sans-serif;
+  font-family: 'ff-tisa-web-pro', serif;
 }
 
 .twitter-tweet {
