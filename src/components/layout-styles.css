@@ -310,10 +310,11 @@ h5 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 0.5rem;
+  font-weight: 400;
   color: inherit;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.1;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.15rem;
   text-transform: uppercase;
 }
 h6 {
@@ -326,7 +327,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-size: 0.78405rem;
+  font-size: 0.9rem;
   line-height: 1.1;
 }
 hgroup {
