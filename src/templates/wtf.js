@@ -159,7 +159,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         tags
-        author
         image {
           childImageSharp {
             fluid(maxWidth: 900) {
