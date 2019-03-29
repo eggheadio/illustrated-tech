@@ -345,13 +345,20 @@ ul {
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
-  padding-left: 0;
+  padding-left: 3rem;
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  list-style-position: outside;
-  list-style-image: none;
+  list-style: none;
 }
+  li {
+  list-style-position: outside;
+  list-style-image: url(./bullet.svg);
+  line-height: 1.8rem;
+  font-size: 1.2rem;
+  font-family: 'ff-tisa-web-pro', serif;
+  }
+
 ol {
   margin-left: 1.45rem;
   margin-right: 0;
