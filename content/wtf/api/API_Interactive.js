@@ -17,21 +17,22 @@ const APIs = () => {
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="100%"
-      height="100%"
-      viewBox="0 0 596 859">
-      <g fill="none" fillRule="evenodd" transform="translate(-.026 -.51)">
+      xmlns='http://www.w3.org/2000/svg'
+      xmlnsXlink='http://www.w3.org/1999/xlink'
+      width='100%'
+      height='100%'
+      viewBox='0 0 596 859'>
+      <g fill='none' fillRule='evenodd' transform='translate(-.026 -.51)'>
         <image
-          width="595.5"
-          height="858"
-          x=".526"
-          y=".509"
+          width='595.5'
+          height='858'
+          x='.526'
+          y='.509'
           xlinkHref={mainImage}
         />
         <Link
-          to="https://developers.google.com/youtube/v3/"
+          target='_blank'
+          to='https://developers.google.com/youtube/v3/'
           css={css`
             rect {
               transition: all 250ms ease;
@@ -41,27 +42,27 @@ const APIs = () => {
             }
             :hover {
               rect {
-                fill: #f2f2f2;
+                fill: #fedbdd;
                 transition: all 250ms ease;
               }
             }
           `}>
           <rect
-            width="144.981"
-            height="101.115"
-            x="353.045"
-            y="245.238"
-            fill="#FFF"
-            fillRule="nonzero"
-            stroke="#FC5B59"
-            strokeWidth="1"
-            rx="4.007"
+            width='144.981'
+            height='101.115'
+            x='353.045'
+            y='245.238'
+            fill='#FFF'
+            fillRule='nonzero'
+            stroke='#FC5B59'
+            strokeWidth='1'
+            rx='4.007'
           />
           <image
-            width="101.5"
-            height="77"
-            x="373.026"
-            y="260.009"
+            width='101.5'
+            height='77'
+            x='373.026'
+            y='260.009'
             xlinkHref={linkImage}
           />
         </Link>
