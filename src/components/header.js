@@ -1,11 +1,11 @@
 import React from 'react'
 import Link from './link'
 import Subbutton from './subbutton'
-import { css } from '@emotion/core'
+import {css} from '@emotion/core'
 import Container from './container'
-import { bpMinMD, bpMinSM } from '../utils/breakpoints'
+import {bpMinMD, bpMinSM, bpMaxMD} from '../utils/breakpoints'
 
-const Header = ({ background, scrollToFooter }) => (
+const Header = ({background, scrollToFooter}) => (
   <header
     css={css({
       background: background,
@@ -22,14 +22,16 @@ const Header = ({ background, scrollToFooter }) => (
         textTransform: 'uppercase',
         margin: 0,
       },
-    })}>
+    })}
+  >
     <Container
       noVerticalPadding
       css={css({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
-      })}>
+      })}
+    >
       <h1>
         <Link
           css={css({
@@ -42,7 +44,8 @@ const Header = ({ background, scrollToFooter }) => (
             padding: '0px',
             fontWeight: '700',
           })}
-          to='/'>
+          to="/"
+        >
           Illustrated.dev
         </Link>
       </h1>
@@ -50,10 +53,19 @@ const Header = ({ background, scrollToFooter }) => (
       {/* Nav Grid Layout */}
       <div
         css={css({
-          [bpMinMD]: { display: 'flex' },
-        })}>
+          [bpMinMD]: {display: 'none'},
+          [bpMaxMD]: {display: 'block'},
+        })}
+      >
+        Under medium
+      </div>
+      <div
+        css={css({
+          [bpMinMD]: {display: 'flex'},
+        })}
+      >
         <Link
-          to='/'
+          to="/"
           css={css({
             float: 'right',
             boxSizing: 'border-box',
@@ -66,11 +78,12 @@ const Header = ({ background, scrollToFooter }) => (
             padding: '0px',
             display: 'none',
             fontWeight: '700',
-          })}>
+          })}
+        >
           Explainers
         </Link>
         <Link
-          to='/sketches'
+          to="/sketches"
           css={css({
             float: 'right',
             boxSizing: 'border-box',
@@ -83,7 +96,8 @@ const Header = ({ background, scrollToFooter }) => (
             padding: '0px',
             display: 'none',
             fontWeight: '700',
-          })}>
+          })}
+        >
           Sketches
         </Link>
         {/* <Link
@@ -104,7 +118,7 @@ const Header = ({ background, scrollToFooter }) => (
           Meta
         </Link> */}
         <Link
-          to='/about'
+          to="/about"
           css={css({
             boxSizing: 'border-box',
             borderRadius: '4px',
@@ -117,11 +131,19 @@ const Header = ({ background, scrollToFooter }) => (
             display: 'none',
             fontWeight: '700',
             justifySelf: 'center',
-          })}>
+          })}
+        >
           About
         </Link>
 
-        <Subbutton onClick={scrollToFooter} />
+        <div
+          css={css({
+            display: 'none',
+            [bpMinMD]: {display: 'block'},
+          })}
+        >
+          <Subbutton onClick={scrollToFooter} />
+        </div>
       </div>
     </Container>
   </header>
