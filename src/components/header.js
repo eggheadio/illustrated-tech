@@ -61,6 +61,7 @@ const Header = ({background, scrollToFooter}) => (
       </div>
       <div
         css={css({
+          display: 'none',
           [bpMinMD]: {display: 'flex'},
         })}
       >
@@ -135,15 +136,7 @@ const Header = ({background, scrollToFooter}) => (
         >
           About
         </Link>
-
-        <div
-          css={css({
-            display: 'none',
-            [bpMinMD]: {display: 'block'},
-          })}
-        >
-          <Subbutton onClick={scrollToFooter} />
-        </div>
+        <Subbutton onClick={scrollToFooter} />
       </div>
     </Container>
   </header>
