@@ -103,7 +103,6 @@ const Header = ({background, scrollToFooter}) => {
 const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
   const firstNavRef = React.useRef(null)
   React.useEffect(() => {
-    console.log({focusFirstLink})
     if (focusFirstLink) {
       firstNavRef.current.focus()
     }
