@@ -1,9 +1,9 @@
 import React from 'react'
-import {css} from '@emotion/core'
+import { css } from '@emotion/core'
 import get from 'lodash/get'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
-import {bpMinSM, bpMinMD, bpMinLG} from '../utils/breakpoints'
+import { bpMinSM, bpMinMD, bpMinLG } from '../utils/breakpoints'
 import Link from './link'
 import Card from './card'
 
@@ -15,7 +15,7 @@ const categoryOrder = {
   meta: 3,
 }
 
-const MainCardGrid = ({posts}) => {
+const MainCardGrid = ({ posts }) => {
   const categories = posts.reduce((currentCategories, nextPost) => {
     const newCategory = get(nextPost, 'node.frontmatter.category')
     if (isEmpty(newCategory)) {
@@ -55,7 +55,7 @@ const MainCardGrid = ({posts}) => {
   )
 }
 
-function Grid({posts, currentCategory}) {
+function Grid({ posts, currentCategory }) {
   return (
     <div
       css={css({
@@ -67,8 +67,7 @@ function Grid({posts, currentCategory}) {
         a: {
           color: 'inherit',
         },
-      })}
-    >
+      })}>
       {posts.map(p => {
         return (
           <GridItem
@@ -82,7 +81,7 @@ function Grid({posts, currentCategory}) {
   )
 }
 
-function GridItem({data, currentCategory}) {
+function GridItem({ data, currentCategory }) {
   const itemCategory = get(data, 'frontmatter.category')
   const displayItem =
     currentCategory === ALL_CATEGORY ? true : itemCategory === currentCategory
@@ -101,8 +100,7 @@ function GridItem({data, currentCategory}) {
             gridColumnEnd: '3',
           },
         })
-      }
-    >
+      }>
       <Card
         title={data.frontmatter.title}
         image={data.frontmatter.thumbnail.childImageSharp.fluid}

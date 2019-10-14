@@ -11,7 +11,7 @@ import SEO from '../components/seo'
 import get from 'lodash/get'
 import Share from '../components/share'
 
-class WhatTheForkTemplate extends React.Component {
+class ExplainerTemplate extends React.Component {
   render() {
     const wtf = this.props.data.mdx
     const site = this.props.data.site
@@ -219,4 +219,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default WhatTheForkTemplate
+export default ExplainerTemplate

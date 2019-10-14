@@ -58,9 +58,9 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            sketches: allMdx(
+            sketchnote: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "sketches" } } }
+              filter: { fields: { collection: { eq: "sketchnote" } } }
             ) {
               edges {
                 node {
@@ -84,12 +84,12 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            wtf: allMdx(
+            explainer: allMdx(
               sort: {
                 order: DESC
                 fields: [frontmatter___featured, frontmatter___date]
               }
-              filter: { fields: { collection: { eq: "wtf" } } }
+              filter: { fields: { collection: { eq: "explainer" } } }
             ) {
               edges {
                 node {
@@ -154,12 +154,12 @@ exports.createPages = ({ graphql, actions }) => {
           return e.node.parent.sourceInstanceName === 'meta'
         })
 
-        const sketches = result.data.sketches.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'sketches'
+        const sketchnote = result.data.sketchnote.edges.filter(e => {
+          return e.node.parent.sourceInstanceName === 'sketchnote'
         })
 
-        const wtf = result.data.wtf.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'wtf'
+        const explainer = result.data.explainer.edges.filter(e => {
+          return e.node.parent.sourceInstanceName === 'explainer'
         })
 
         pages.forEach(({ node }) => {
@@ -182,20 +182,21 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        sketches.forEach(({ node }) => {
+        sketchnote.forEach(({ node }) => {
           createPage({
-            path: `sketches/${node.frontmatter.slug}`,
-            component: path.resolve(`./src/templates/sketches.js`),
+            path: `sketchnote/${node.frontmatter.slug}`,
+            component: path.resolve(`./src/templates/sketchnote.js`),
             context: { id: node.id },
           })
         })
 
-        wtf.forEach(({ node }, index) => {
-          const next = index === wtf.length - 1 ? null : wtf[index + 1].node
-          const previous = index === 0 ? null : wtf[index - 1].node
+        explainer.forEach(({ node }, index) => {
+          const next =
+            index === explainer.length - 1 ? null : explainer[index + 1].node
+          const previous = index === 0 ? null : explainer[index - 1].node
           createPage({
             path: node.frontmatter.slug,
-            component: path.resolve(`./src/templates/wtf.js`),
+            component: path.resolve(`./src/templates/explainer.js`),
             context: { id: node.id, previous, next },
           })
         })

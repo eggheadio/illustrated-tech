@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/meta/`,
+        path: `${__dirname}/content/metaposts/`,
         name: 'meta',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
@@ -64,16 +64,16 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/sketches/`,
-        name: 'sketches',
+        path: `${__dirname}/content/sketchnotes/`,
+        name: 'sketchnotes',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/wtf/`,
-        name: 'wtf',
+        path: `${__dirname}/content/explainers/`,
+        name: 'explainers',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
     },
