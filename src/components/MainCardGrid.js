@@ -8,6 +8,13 @@ import Link from './link'
 import Card from './card'
 
 const ALL_CATEGORY = 'all'
+
+const categoryOrder = {
+  explainer: 1,
+  sketchnotes: 2,
+  meta: 3,
+}
+
 const MainCardGrid = ({posts}) => {
   const categories = posts.reduce((currentCategories, nextPost) => {
     const newCategory = get(nextPost, 'node.frontmatter.category')
@@ -16,10 +23,15 @@ const MainCardGrid = ({posts}) => {
     }
     if (!includes(currentCategories, newCategory)) {
       currentCategories.push(newCategory)
+      currentCategories.sort((c1, c2) => {
+        const c1Order = categoryOrder[c1] || 10
+        const c2Order = categoryOrder[c2] || 10
+        return c1Order - c2Order
+      })
     }
     return currentCategories
   }, [])
-  console.log({categories})
+
   const [currentCategory, setCurrentCategory] = React.useState(ALL_CATEGORY)
   const handleCategoryClick = category => {
     if (category === currentCategory) {
@@ -44,7 +56,6 @@ const MainCardGrid = ({posts}) => {
 }
 
 function Grid({posts, currentCategory}) {
-  console.log({posts})
   return (
     <div
       css={css({
