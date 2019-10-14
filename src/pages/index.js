@@ -41,20 +41,8 @@ export default function Index({data: {site, allMdx, sketches}}) {
           </h1>
 
           {/* Article Grid Section */}
-          <div
-            css={css({
-              display: 'grid',
-              gridGap: '25px',
 
-              gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
-
-              a: {
-                color: 'inherit',
-              },
-            })}
-          >
-            <MainCardGrid posts={allMdx.edges} />
-          </div>
+          <MainCardGrid posts={allMdx.edges} />
         </Container>
         <Container
           noVerticalPadding
