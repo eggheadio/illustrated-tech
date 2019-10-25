@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-mdx`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
         globalScope: `
           import ResponsiveEmbed from "react-responsive-embed";
