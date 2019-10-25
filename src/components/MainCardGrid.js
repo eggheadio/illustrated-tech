@@ -42,14 +42,38 @@ const MainCardGrid = ({ posts }) => {
   }
   return (
     <div>
-      {currentCategory}
-      {categories.map(c => {
-        return (
-          <button key={c} onClick={() => handleCategoryClick(c)}>
-            {c}
-          </button>
-        )
-      })}
+      <div
+        css={css({
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          alignItems: 'center',
+        })}>
+        <p>Sketchnotes, Metaposts, & Illustrated Articles</p>
+        <span css={css({ justifySelf: 'end' })}>
+          {categories.map(c => {
+            return (
+              <button
+                css={css({
+                  padding: '8px 20px',
+                  margin: '4px',
+                  border: 'none',
+                  background: 'rgba(255, 255, 255, 0.7)',
+                  borderRadius: '24px',
+                  fontFamily: 'brandon-grotesque, sans-serif',
+                  fontSize: '14px',
+                  letterSpacing: '0.1em',
+                  fontWeight: '700',
+                  textTransform: 'uppercase',
+                  color: '#A6BFC8',
+                })}
+                key={c}
+                onClick={() => handleCategoryClick(c)}>
+                {c}
+              </button>
+            )
+          })}
+        </span>
+      </div>
       <Grid posts={posts} currentCategory={currentCategory} />
     </div>
   )
