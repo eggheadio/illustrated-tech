@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
           {
             meta: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "meta" } } }
+              filter: { frontmatter: { category: { eq: "meta" } } }
             ) {
               edges {
                 node {
@@ -49,7 +49,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -60,7 +59,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             sketchnote: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "sketchnote" } } }
+              filter: { frontmatter: { category: { eq: "sketchnote" } } }
             ) {
               edges {
                 node {
@@ -74,7 +73,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -89,7 +87,7 @@ exports.createPages = ({ graphql, actions }) => {
                 order: DESC
                 fields: [frontmatter___featured, frontmatter___date]
               }
-              filter: { fields: { collection: { eq: "explainer" } } }
+              filter: { frontmatter: { category: { eq: "explainer" } } }
             ) {
               edges {
                 node {
@@ -103,7 +101,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -115,7 +112,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
             pages: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "pages" } } }
+              filter: { frontmatter: { category: { eq: "pages" } } }
             ) {
               edges {
                 node {
@@ -129,7 +126,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -146,21 +142,13 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const pages = result.data.pages.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'pages'
-        })
+        const pages = result.data.pages.edges
 
-        const meta = result.data.meta.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'meta'
-        })
+        const meta = result.data.meta.edges
 
-        const sketchnote = result.data.sketchnote.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'sketchnote'
-        })
+        const sketchnote = result.data.sketchnote.edges
 
-        const explainer = result.data.explainer.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'explainer'
-        })
+        const explainer = result.data.explainer.edges
 
         pages.forEach(({ node }) => {
           createPage({
@@ -176,7 +164,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         meta.forEach(({ node }) => {
           createPage({
-            path: `meta/${node.frontmatter.slug}`,
+            path: `${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/meta.js`),
             context: { id: node.id },
           })
@@ -184,7 +172,7 @@ exports.createPages = ({ graphql, actions }) => {
 
         sketchnote.forEach(({ node }) => {
           createPage({
-            path: `sketchnote/${node.frontmatter.slug}`,
+            path: `${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/sketchnote.js`),
             context: { id: node.id },
           })
