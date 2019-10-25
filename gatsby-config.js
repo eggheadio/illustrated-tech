@@ -56,7 +56,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/metaposts/`,
+        path: `${__dirname}/content/meta/`,
         name: 'meta',
         ignore: [`**/\.*`], // ignore files starting with a dot,
       },
