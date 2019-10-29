@@ -15,7 +15,7 @@ const Header = ({ background, scrollToFooter }) => {
       css={css({
         background: background,
         [bpMinSM]: {
-          paddingTop: '40px',
+          paddingTop: '20px',
         },
         paddingTop: '10px',
         a: {

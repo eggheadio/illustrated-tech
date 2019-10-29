@@ -3,14 +3,14 @@ import { css } from '@emotion/core'
 import get from 'lodash/get'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
-import { bpMinSM, bpMinMD, bpMinLG } from '../utils/breakpoints'
+import { bpMinSM } from '../utils/breakpoints'
 import Link from './link'
 import Card from './card'
 
 const ALL_CATEGORY = 'all'
 
 const categoryOrder = {
-  explainer: 1,
+  explainers: 1,
   sketchnotes: 2,
   meta: 3,
 }

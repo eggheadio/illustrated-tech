@@ -57,9 +57,9 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            sketchnote: allMdx(
+            sketchnotes: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { frontmatter: { category: { eq: "sketchnote" } } }
+              filter: { frontmatter: { category: { eq: "sketchnotes" } } }
             ) {
               edges {
                 node {
@@ -82,12 +82,12 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            explainer: allMdx(
+            explainers: allMdx(
               sort: {
                 order: DESC
                 fields: [frontmatter___featured, frontmatter___date]
               }
-              filter: { frontmatter: { category: { eq: "explainer" } } }
+              filter: { frontmatter: { category: { eq: "explainers" } } }
             ) {
               edges {
                 node {
@@ -146,9 +146,9 @@ exports.createPages = ({ graphql, actions }) => {
 
         const meta = result.data.meta.edges
 
-        const sketchnote = result.data.sketchnote.edges
+        const sketchnotes = result.data.sketchnotes.edges
 
-        const explainer = result.data.explainer.edges
+        const explainers = result.data.explainers.edges
 
         pages.forEach(({ node }) => {
           createPage({
@@ -170,21 +170,21 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        sketchnote.forEach(({ node }) => {
+        sketchnotes.forEach(({ node }) => {
           createPage({
             path: `${node.frontmatter.slug}`,
-            component: path.resolve(`./src/templates/sketchnote.js`),
+            component: path.resolve(`./src/templates/sketchnotes.js`),
             context: { id: node.id },
           })
         })
 
-        explainer.forEach(({ node }, index) => {
+        explainers.forEach(({ node }, index) => {
           const next =
-            index === explainer.length - 1 ? null : explainer[index + 1].node
-          const previous = index === 0 ? null : explainer[index - 1].node
+            index === explainers.length - 1 ? null : explainers[index + 1].node
+          const previous = index === 0 ? null : explainers[index - 1].node
           createPage({
             path: node.frontmatter.slug,
-            component: path.resolve(`./src/templates/explainer.js`),
+            component: path.resolve(`./src/templates/explainers.js`),
             context: { id: node.id, previous, next },
           })
         })

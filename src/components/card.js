@@ -5,7 +5,6 @@ import { bpMinSM, bpMinMD, bpMinLG } from '../utils/breakpoints'
 
 const Card = ({
   title,
-  type,
   image = [],
   description,
   category,
@@ -14,13 +13,13 @@ const Card = ({
   featured,
   children,
 }) => {
-  let typeColor
-  if (type === 'explainer') {
-    typeColor = '#7053AE'
-  } else if (type === 'nugget') {
-    typeColor = '#B8CB44'
-  } else if (type === 'sketchnotes') {
-    typeColor = '#3FCCDC'
+  let categoryColor
+  if (category === 'explainers') {
+    categoryColor = '#7053AE'
+  } else if (category === 'meta') {
+    categoryColor = '#B8CB44'
+  } else if (category === 'sketchnotes') {
+    categoryColor = '#3FCCDC'
   }
 
   return (
@@ -31,7 +30,7 @@ const Card = ({
           flexDirection: featured ? 'row' : 'column',
         },
         padding: '5px',
-        borderTop: featured ? `4px solid ${typeColor}` : 'none',
+        borderTop: featured ? `4px solid ${categoryColor}` : 'none',
         background: 'white',
         position: 'relative',
         boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',

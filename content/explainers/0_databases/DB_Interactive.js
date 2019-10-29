@@ -1,6 +1,5 @@
 import React from 'react'
 import { css, keyframes } from '@emotion/core'
-import styled from '@emotion/styled'
 import Link from '../../../src/components/link'
 import mainImage from './interactive_illo/mainImage'
 

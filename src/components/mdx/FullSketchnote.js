@@ -33,7 +33,7 @@ const FullSketchnote = props => {
         }}>
         A high-res & printable version of the sketchnote, plus the full course
         is avaliable here on the{' '}
-        <a href={props.courselink} target='_blank'>
+        <a href={props.courselink} rel='noopener noreferrer' target='_blank'>
           {props.coursename}
         </a>{' '}
         page.

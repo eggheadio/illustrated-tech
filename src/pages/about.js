@@ -76,7 +76,7 @@ const AboutPage = () => {
                 <p>
                   I make these because the front-end world is overflowing with
                   confounding things to learn (and JavaScript in particular is
-                  <span> 🔥🍌🌟☠ </span> ridiculous sometimes).
+                  <span role='img'> 🔥🍌🌟☠ </span> ridiculous sometimes).
                 </p>
                 <p>
                   Visual metaphors are a wonderfully effective learning tool for
