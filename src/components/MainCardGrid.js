@@ -48,7 +48,7 @@ const MainCardGrid = ({ posts }) => {
           gridTemplateColumns: '1fr 1fr',
           alignItems: 'center',
         })}>
-        <p>Sketchnotes, Metaposts, & Illustrated Articles</p>
+        <p>Illustrated Articles & Sketchnotes</p>
         <span css={css({ justifySelf: 'end' })}>
           {categories.map(c => {
             return (

@@ -7,6 +7,8 @@ module.exports = {
     title: `Illustrated.dev`,
     description: `Illustrated web development & javascript tutorials`,
     author: '@mappletons',
+    twitterUsername: '@mappletons',
+    image: '/static/images/id_opengraph.png',
   },
   plugins: [
     {
@@ -25,7 +27,6 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 900,
-              sizeByPixelDensity: true,
               linkImagesToOriginal: false,
               wrapperStyle: {
                 float: 'left',
@@ -137,20 +138,11 @@ module.exports = {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
-                  image_url: `https://${
-                    site.siteMetadata.title
-                  }/images/id_favicon.svg`,
-                  url: `https://${site.siteMetadata.title}/${
-                    edge.node.frontmatter.slug
-                  }`,
-                  guid: `https://${site.siteMetadata.title}/${
-                    edge.node.frontmatter.slug
-                  }`,
+                  image_url: `https://${site.siteMetadata.title}/images/id_favicon.svg`,
+                  url: `https://${site.siteMetadata.title}/${edge.node.frontmatter.slug}`,
+                  guid: `https://${site.siteMetadata.title}/${edge.node.frontmatter.slug}`,
                   enclosure: {
-                    url: `${site.siteMetadata.title}${
-                      edge.node.frontmatter.thumbnail.childImageSharp.original
-                        .src
-                    }`,
+                    url: `${site.siteMetadata.title}${edge.node.frontmatter.thumbnail.childImageSharp.original.src}`,
                   },
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 })

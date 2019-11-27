@@ -76,7 +76,13 @@ const AboutPage = () => {
                 <p>
                   I make these because the front-end world is overflowing with
                   confounding things to learn (and JavaScript in particular is
-                  <span role='img'> 🔥🍌🌟☠ </span> ridiculous sometimes).
+                  <span
+                    aria-label='fire, banana, star, and crossbones emojis'
+                    role='img'>
+                    {' '}
+                    🔥🍌🌟☠{' '}
+                  </span>{' '}
+                  ridiculous sometimes).
                 </p>
                 <p>
                   Visual metaphors are a wonderfully effective learning tool for
