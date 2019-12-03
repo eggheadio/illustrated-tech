@@ -11,6 +11,8 @@ module.exports = {
     image: '/static/images/id_opengraph.png',
   },
   plugins: [
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -47,7 +49,7 @@ module.exports = {
     'gatsby-transformer-remark',
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
@@ -92,8 +94,6 @@ module.exports = {
         head: true,
       },
     },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
     'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-manifest`,
