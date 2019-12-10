@@ -127,17 +127,6 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
         justifyContent: 'space-around',
         alignItems: 'center',
       })}>
-      <Link
-        to='/'
-        innerRef={el => {
-          firstNavRef.current = el
-        }}
-        css={linkStyle}>
-        Explainers
-      </Link>
-      <Link to='/sketches' css={linkStyle}>
-        Sketches
-      </Link>
       <Link to='/about' css={linkStyle}>
         About
       </Link>
