@@ -26,7 +26,7 @@ const Card = ({
     <div
       css={css({
         [bpMinSM]: {
-          height: '440px',
+          height: '450px',
           flexDirection: featured ? 'row' : 'column',
         },
         padding: '5px',
@@ -39,22 +39,24 @@ const Card = ({
         justifyContent: 'space-between',
         '.gatsby-image-wrapper': {
           [bpMinLG]: {
-            width: featured ? '400px' : '100%',
-            height: featured ? '400px' : '100%',
+            width: featured ? '500px' : '100%',
+            height: featured ? '500px' : '100%',
           },
           [bpMinSM]: {
-            width: featured ? '360px' : '100%',
-            height: featured ? '360px' : '100%',
+            width: featured ? '380px' : '100%',
+            height: featured ? '380px' : '100%',
           },
           width: '100%',
           height: '100%',
         },
         h1: {
-          [bpMinSM]: { fontSize: featured ? '40px' : '23px' },
-          fontSize: '1.4rem',
+          [bpMinSM]: { fontSize: featured ? '42px' : '26px' },
+          fontSize: '1.3rem',
           fontWeight: '300',
-          height: featured ? 'auto' : '60px',
+          height: featured ? 'auto' : '20px',
           lineHeight: '1.2',
+          marginBottom: '0',
+          display: 'inline-block',
         },
         p: {
           fontSize: '1em',
@@ -62,11 +64,11 @@ const Card = ({
         },
         '.description': {
           [bpMinMD]: {
-            display: 'block',
+            display: 'inline-block',
           },
           fontFamily: 'ff-tisa-web-pro, serif',
           fontWeight: '100',
-          fontSize: '20px',
+          fontSize: '28px',
           zIndex: 1,
           lineHeight: 1.2,
           opacity: 0.9,

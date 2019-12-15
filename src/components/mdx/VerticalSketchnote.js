@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FullSketchnote = props => {
+const VerticalSketchnote = props => {
   return (
     <>
       <h2 style={{ textAlign: 'center', marginBottom: '0' }}>
@@ -13,7 +13,8 @@ const FullSketchnote = props => {
           boxSizing: 'border-box',
           borderRadius: '4px',
           boxShadow: '0px 8px 16px -12px rgba(120, 134, 138, 0.75)',
-          maxHeight: '100%',
+          maxWidth: '300px',
+          margin: '0 auto',
         }}>
         {props.children}
       </div>
@@ -43,4 +44,4 @@ const FullSketchnote = props => {
   )
 }
 
-export default FullSketchnote
+export default VerticalSketchnote

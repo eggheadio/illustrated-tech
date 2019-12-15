@@ -26,10 +26,11 @@ export default function Index({ data: { site, allMdx, sketches } }) {
               fontWeight: '600',
               clear: 'both',
               [bpMinMD]: {
-                padding: '30px 0',
+                padding: '30px 0 0 0',
                 fontSize: '4.4em',
               },
               fontSize: '3em',
+              lineHeight: '1.1em',
               letterSpacing: '-0.02em',
             })}>
             Web development,
