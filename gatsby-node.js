@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
           {
             meta: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "meta" } } }
+              filter: { frontmatter: { category: { eq: "meta" } } }
             ) {
               edges {
                 node {
@@ -49,7 +49,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -58,9 +57,9 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            sketches: allMdx(
+            sketchnotes: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "sketches" } } }
+              filter: { frontmatter: { category: { eq: "sketchnotes" } } }
             ) {
               edges {
                 node {
@@ -74,7 +73,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -84,9 +82,12 @@ exports.createPages = ({ graphql, actions }) => {
                 }
               }
             }
-            wtf: allMdx(
-              sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "wtf" } } }
+            explainers: allMdx(
+              sort: {
+                order: DESC
+                fields: [frontmatter___featured, frontmatter___date]
+              }
+              filter: { frontmatter: { category: { eq: "explainers" } } }
             ) {
               edges {
                 node {
@@ -100,18 +101,18 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
                     slug
+                    type
                   }
                 }
               }
             }
             pages: allMdx(
               sort: { order: DESC, fields: [frontmatter___date] }
-              filter: { fields: { collection: { eq: "pages" } } }
+              filter: { frontmatter: { category: { eq: "pages" } } }
             ) {
               edges {
                 node {
@@ -125,7 +126,6 @@ exports.createPages = ({ graphql, actions }) => {
                   excerpt(pruneLength: 250)
                   fields {
                     collection
-                    slug
                   }
                   frontmatter {
                     title
@@ -142,21 +142,13 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const pages = result.data.pages.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'pages'
-        })
+        const pages = result.data.pages.edges
 
-        const meta = result.data.meta.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'meta'
-        })
+        const meta = result.data.meta.edges
 
-        const sketches = result.data.sketches.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'sketches'
-        })
+        const sketchnotes = result.data.sketchnotes.edges
 
-        const wtf = result.data.wtf.edges.filter(e => {
-          return e.node.parent.sourceInstanceName === 'wtf'
-        })
+        const explainers = result.data.explainers.edges
 
         pages.forEach(({ node }) => {
           createPage({
@@ -172,26 +164,27 @@ exports.createPages = ({ graphql, actions }) => {
 
         meta.forEach(({ node }) => {
           createPage({
-            path: `meta/${node.frontmatter.slug}`,
+            path: `${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/meta.js`),
             context: { id: node.id },
           })
         })
 
-        sketches.forEach(({ node }) => {
+        sketchnotes.forEach(({ node }) => {
           createPage({
-            path: `sketches/${node.frontmatter.slug}`,
-            component: path.resolve(`./src/templates/sketches.js`),
+            path: `${node.frontmatter.slug}`,
+            component: path.resolve(`./src/templates/sketchnotes.js`),
             context: { id: node.id },
           })
         })
 
-        wtf.forEach(({ node }, index) => {
-          const next = index === wtf.length - 1 ? null : wtf[index + 1].node
-          const previous = index === 0 ? null : wtf[index - 1].node
+        explainers.forEach(({ node }, index) => {
+          const next =
+            index === explainers.length - 1 ? null : explainers[index + 1].node
+          const previous = index === 0 ? null : explainers[index - 1].node
           createPage({
             path: node.frontmatter.slug,
-            component: path.resolve(`./src/templates/wtf.js`),
+            component: path.resolve(`./src/templates/explainers.js`),
             context: { id: node.id, previous, next },
           })
         })

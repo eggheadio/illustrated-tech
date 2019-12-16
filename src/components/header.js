@@ -14,9 +14,8 @@ const Header = ({background, scrollToFooter}) => {
     <header
       css={css({
         background: background,
-
         [bpMinSM]: {
-          paddingTop: '40px',
+          paddingTop: '20px',
         },
         paddingTop: '10px',
         a: {
@@ -101,12 +100,26 @@ const Header = ({background, scrollToFooter}) => {
 }
 
 const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
+  const linkStyle = css({
+    float: 'right',
+    boxSizing: 'border-box',
+    borderRadius: '4px',
+    color: 'rgb(79, 88, 95)',
+    [bpMinMD]: {
+      padding: '15px 20px',
+      display: 'block',
+    },
+    padding: '0px',
+    fontWeight: '700',
+  })
+
   const firstNavRef = React.useRef(null)
   React.useEffect(() => {
     if (focusFirstLink) {
       firstNavRef.current.focus()
     }
   }, [focusFirstLink])
+
   return (
     <div
       css={css({
@@ -115,77 +128,16 @@ const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
         alignItems: 'center',
       })}
     >
-      <Link
-        to="/"
-        innerRef={el => {
-          firstNavRef.current = el
-        }}
-        css={css({
-          float: 'right',
-          boxSizing: 'border-box',
-          borderRadius: '4px',
-          color: 'rgb(79, 88, 95)',
-          [bpMinMD]: {
-            padding: '15px 20px',
-            display: 'block',
-          },
-          padding: '0px',
-          fontWeight: '700',
-        })}
-      >
-        Explainers
-      </Link>
-      <Link
-        to="/sketches"
-        css={css({
-          float: 'right',
-          boxSizing: 'border-box',
-          borderRadius: '4px',
-          color: 'rgb(79, 88, 95)',
-          [bpMinMD]: {
-            padding: '15px 20px',
-            display: 'block',
-          },
-          padding: '0px',
-          fontWeight: '700',
-        })}
-      >
-        Sketches
-      </Link>
-      {/* <Link
-          to='/meta'
-          css={css({
-            float: 'right',
-            boxSizing: 'border-box',
-            borderRadius: '4px',
-            color: 'rgb(79, 88, 95)',
-            [bpMinMD]: {
-              padding: '15px 20px',
-              display: 'block',
-            },
-            padding: '0px',
-            fontWeight: '700',
-          })}>
-          Meta
-        </Link> */}
-      <Link
-        to="/about"
-        css={css({
-          boxSizing: 'border-box',
-          borderRadius: '4px',
-          color: 'rgb(79, 88, 95)',
-          [bpMinMD]: {
-            padding: '15px 25px',
-            display: 'block',
-          },
-          padding: '0px',
-          fontWeight: '700',
-          justifySelf: 'center',
-        })}
-      >
+      <Link to="/about" css={linkStyle}>
         About
       </Link>
-      <Subbutton onClick={scrollToFooter} />
+      <Subbutton
+        css={css({
+          [bpMinMD]: {display: 'block'},
+          [bpMaxMD]: {display: 'none'},
+        })}
+        onClick={scrollToFooter}
+      />
     </div>
   )
 }
