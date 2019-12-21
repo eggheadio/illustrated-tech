@@ -1,8 +1,8 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import Layout from '../components/layout'
-import Container from '../components/Container'
-import SEO from '../components/SEO'
+import Container from '../components/container'
+import SEO from '../components/seo'
 import { bpMinSM } from '../utils/breakpoints'
 import ResourceCard from '../components/resourceCard.js'
 import ResourceBook from '../components/resourceBook.js'
@@ -42,12 +42,13 @@ export default function ResourcesPage() {
               alignItems: 'center',
             })}>
             {resourceCourses.map((d, i) => {
+              console.log(d.recCourses)
               return (
                 <ResourceCard
                   key={i}
                   title={d.title}
                   description={d.description}
-                  image={d.img}
+                  img={d.img}
                   cost={d.cost}
                   url={d.url}
                 />
@@ -66,7 +67,6 @@ export default function ResourcesPage() {
             css={css({
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr) )',
-              alignItems: 'center',
             })}>
             {resourceBooks.map((d, i) => {
               return (
@@ -74,7 +74,7 @@ export default function ResourcesPage() {
                   key={i}
                   title={d.title}
                   description={d.description}
-                  image={d.img}
+                  img={d.img}
                   url={d.url}
                   author={d.author}
                 />

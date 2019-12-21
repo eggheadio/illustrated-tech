@@ -77,8 +77,21 @@ export const resourceCourses = [
     ],
   },
   {
+    title: 'Will Weston',
+    description: 'Will is a veteran',
+    url: [
+      'https://www.instagram.com/willwestonstudio',
+      'https://www.twitch.tv/peterhanstyle',
+    ],
+    img: 'https://via.placeholder.com/400',
+    cost: '-',
+    category: 'website',
+    recommended: true,
+  },
+  {
     title: 'Draw a Box',
-    description: '-',
+    description:
+      'A community favourite, this site walks you through the principals of the Dynamic Sketching tradition',
     url: 'https://drawabox.com/',
     img: 'https://via.placeholder.com/400',
     cost: 'Free!',
@@ -133,75 +146,6 @@ export const resourceCourses = [
     category: 'website',
     recommended: false,
   },
-]
-
-export const resourceBooks = [
-  {
-    title: 'How to Think When You Draw',
-    author: 'Lorenzo Etherington',
-    description: '-',
-    url: '#',
-    img: 'https://via.placeholder.com/400',
-    cost: '',
-    topic: 'drawing',
-    recommended: false,
-  },
-  {
-    title: 'How to Draw',
-    author: 'Scott Robertson',
-    description: '-',
-    url: '#',
-    img: 'https://via.placeholder.com/400',
-    cost: '',
-    topic: 'drawing',
-    recommended: false,
-  },
-  {
-    title: 'Lateral Thinking',
-    author: 'Edward de Bono',
-    description: '-',
-    url: '#',
-    img: 'https://via.placeholder.com/400',
-    cost: '',
-    topic: 'visual thinking',
-    recommended: false,
-  },
-  {
-    title: 'Metaphors We Live By',
-    author: 'George Lakoff, Mark Johnson',
-    description: '-',
-    url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
-    img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
-    cost: '',
-    topic: 'visual thinking',
-    recommended: false,
-  },
-  {
-    title: 'Thinkertoys',
-    author: 'Michael Michalko',
-    description: '-',
-    url: 'https://www.goodreads.com/book/show/517518.Thinkertoys',
-    img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320553080l/517518.jpg',
-    cost: '',
-    topic: 'visual thinking',
-    recommended: false,
-  },
-]
-
-export const resourcePeople = [
-  {
-    title: 'Will Weston',
-    description: '-',
-    url: [
-      'https://www.instagram.com/willwestonstudio',
-      'https://www.twitch.tv/peterhanstyle',
-    ],
-    img: 'https://via.placeholder.com/400',
-    category: 'person',
-    recommended: true,
-  },
   {
     title: 'Peter Han',
     description: '-',
@@ -211,6 +155,73 @@ export const resourcePeople = [
     ],
     img: 'https://via.placeholder.com/400',
     category: 'person',
-    recommended: true,
+    recommended: false,
+  },
+]
+
+export const resourceBooks = [
+  {
+    title: 'How to Think When You Draw',
+    author: 'Lorenzo Etherington',
+    url:
+      'https://www.goodreads.com/book/show/41583721-how-to-think-when-you-draw-volume-1',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1535776123l/41583721._SX318_.jpg',
+    topic: 'drawing',
+    recommended: false,
+  },
+  {
+    title: 'How to Draw',
+    author: 'Scott Robertson',
+    url: 'https://www.goodreads.com/book/show/15808089-how-to-draw',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1377121233l/15808089.jpg',
+    topic: 'drawing',
+    recommended: false,
+  },
+  {
+    title: 'Lateral Thinking',
+    author: 'Edward de Bono',
+    url: 'https://www.goodreads.com/book/show/10675.Lateral_Thinking',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1416779115l/10675.jpg',
+    topic: 'visual thinking',
+    recommended: false,
+  },
+  {
+    title: 'Metaphors We Live By',
+    author: 'George Lakoff, Mark Johnson',
+    url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
+    topic: 'visual thinking',
+    recommended: false,
+  },
+  {
+    title: 'Thinkertoys',
+    author: 'Michael Michalko',
+    url: 'https://www.goodreads.com/book/show/517518.Thinkertoys',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320553080l/517518.jpg',
+    topic: 'visual thinking',
+    recommended: false,
+  },
+  {
+    title: 'Sketching: Drawing Techniques for Product Designers',
+    author: 'Koos Eissen',
+    url: 'https://www.goodreads.com/book/show/2767856-sketching',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1356347823l/2767856.jpg',
+    topic: 'drawing',
+    recommended: false,
+  },
+  {
+    title: 'Rapid Viz',
+    author: 'Kurt Hanks & Larry Belliston',
+    url: 'https://www.goodreads.com/book/show/146300.Rapid_Viz_',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387746517l/146300.jpg',
+    topic: 'drawing',
+    recommended: false,
   },
 ]
