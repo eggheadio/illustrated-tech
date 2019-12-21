@@ -112,7 +112,7 @@ export const resourceCourses = [
     title: 'Ty Carter',
     description:
       'Another independent teacher, Ty is a background designer from the animation world creating tutorials on Patreon and Gumroad. Strong on lighting & colour theory, stylised illustration techniques, and visual design principals',
-    url: '#',
+    url: ['https://gumroad.com/tycarter'],
     img: 'https://via.placeholder.com/400',
     cost: '$5-30 Monthly',
     category: 'website',
@@ -131,7 +131,7 @@ export const resourceCourses = [
   {
     title: 'The Foundation Group',
     description: '-',
-    url: '#',
+    url: 'https://www.foundationartgroup.com/',
     img: 'https://via.placeholder.com/400',
     cost: '',
     category: 'website',
@@ -224,4 +224,24 @@ export const resourceBooks = [
     topic: 'drawing',
     recommended: false,
   },
+  {
+    title: 'Dynamic Bible',
+    author: 'Peter Han',
+    url: 'https://www.gallerynucleus.com/detail/21089/',
+    img:
+      'https://70f186a60af817fe0731-09dac41207c435675bfd529a14211b5c.ssl.cf1.rackcdn.com/assets/attachments_p/000/059/556/size500_han_dynamicbible_detail2_500.jpg',
+    topic: 'drawing',
+    recommended: false,
+  },
+  {
+    title: 'Drawn to Life: Volumes I and II',
+    author: 'Walt Stanchfield',
+    url: 'https://www.goodreads.com/book/show/6250465-drawn-to-life',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355037566l/6250465.jpg',
+    topic: 'drawing',
+    recommended: true,
+  },
 ]
+
+// Hunt for more books https://www.gallerynucleus.com/books/new
