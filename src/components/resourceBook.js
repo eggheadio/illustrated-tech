@@ -48,6 +48,7 @@ export default function ResourceBook(props) {
               },
               img: {
                 maxWidth: '100%',
+                borderRadius: '4px',
               },
               '.dataBlock': {
                 paddingLeft: '20px',
