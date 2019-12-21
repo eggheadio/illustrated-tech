@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
 import Img from 'gatsby-image'
+import { StaticQuery, graphql } from 'gatsby'
 import { bpMinSM } from '../utils/breakpoints'
 import Link from './link'
 

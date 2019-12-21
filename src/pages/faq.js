@@ -8,20 +8,6 @@ import SEO from '../components/seo'
 import Container from '../components/container'
 
 export default function FAQPage() {
-  // const FAQPage = () => {
-  //   const data = useStaticQuery(graphql`
-  //     query AboutPageQuery {
-  //       profilePic: file(relativePath: { eq: "maggie.png" }) {
-  //         childImageSharp {
-  //           fluid(maxWidth: 330) {
-  //             ...GatsbyImageSharpFluid
-  //           }
-  //         }
-  //       }
-  //     }
-  //   `)
-  // }
-
   return (
     <>
       <SEO title='FAQ' />
