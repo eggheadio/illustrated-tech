@@ -4,7 +4,7 @@ export const resourceCourses = [
     description:
       'Primarily aimed at concept artists and digital painters, Schoolism is strong on advanced fundamentals. Probably too intense for beginners. Dives deep on rendering, composition, and character design.',
     url: 'https://www.schoolism.com/',
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/schoolism.png',
     cost: '$25 Monthly',
     category: 'website',
     recommended: true,
@@ -36,7 +36,7 @@ export const resourceCourses = [
     description:
       "While a bit old school and slow-paced, the instructors on here are true veterans. Mostly from the visual development and film world, they're strong on anatomy, traditional painting, and compositional layout theory.",
     url: 'https://nma.art',
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/nma.png',
     cost: '$35 Monthly',
     category: 'website',
     recommended: true,
@@ -64,7 +64,7 @@ export const resourceCourses = [
     description:
       'Strong on beginner fundamentals – great for anyone just getting started. Jake Parker and Will Terry teach drawing and digital painting from the ground up through sets of well-designed, hands-on exercises.',
     url: 'https://www.svslearn.com/',
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/svs.png',
     cost: '$25 Monthly',
     category: 'website',
     recommended: false,
@@ -83,7 +83,7 @@ export const resourceCourses = [
       'https://www.instagram.com/willwestonstudio',
       'https://www.twitch.tv/peterhanstyle',
     ],
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/willweston.png',
     cost: '-',
     category: 'website',
     recommended: true,
@@ -93,7 +93,7 @@ export const resourceCourses = [
     description:
       'A community favourite, this site walks you through the principals of the Dynamic Sketching tradition',
     url: 'https://drawabox.com/',
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/drawabox.png',
     cost: 'Free!',
     category: 'website',
     recommended: false,
@@ -103,7 +103,7 @@ export const resourceCourses = [
     description:
       'James is an independent creator running a patreon and selling individual gumroad courses. Focuses on concept design for games',
     url: 'https://www.patreon.com/moderndayjames',
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/moddayjames.png',
     cost: '$5-30 Monthly',
     category: 'website',
     recommended: false,
