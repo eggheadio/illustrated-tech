@@ -66,7 +66,7 @@ export default function ResourcesPage() {
           <div
             css={css({
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr) )',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr) )',
             })}>
             {resourceBooks.map((d, i) => {
               return (

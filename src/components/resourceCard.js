@@ -13,17 +13,18 @@ export default function ResourceCard(props) {
           borderRadius: '6px',
           background: 'rgba(253,252,252,1)',
           border: '1px solid rgba(255,255,255,0.7)',
-          boxShadow: '-5px -5px 26px 0 rgba(255,255,255,1)',
-          boxShadow: '5px 5px 20px 0 rgba(218,224,228,1)',
+          boxShadow: '-5px -5px 26px 0 rgba(255,255,255,0.6)',
+          boxShadow: '5px 5px 20px 0 rgba(218,224,228,0.6)',
           justifyContent: 'space-between',
           '.gatsby-image-wrapper': {
             width: '100%',
             height: '100%',
           },
           ':hover': {
-            boxShadow: '1px 1px 4px 0 rgba(190,198,206,1)',
+            boxShadow: '1px 2px 4px 0 rgba(190,198,206,0.7)',
             transition: 'all 0.4s ease',
             transform: 'scale(0.99)',
+            border: '1px solid rgba(228,234,238,1)',
           },
           transition: 'all 0.4s ease',
         })}>
@@ -42,7 +43,7 @@ export default function ResourceCard(props) {
               },
               h5: {
                 textAlign: 'right',
-                fontSize: '0.9em',
+                fontSize: '0.8em',
                 letterSpacing: '0.1em',
               },
               img: {
@@ -56,7 +57,9 @@ export default function ResourceCard(props) {
                 fontSize: '1em',
               },
               ':hover': {
-                h1: { color: '#8748C7' },
+                h1: {
+                  color: '#8748C7',
+                },
               },
             })}>
             <img src={props.img} />

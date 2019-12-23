@@ -11,21 +11,18 @@ export default function ResourceBook(props) {
       <Link to={props.url}>
         <div
           css={css({
-            margin: '10px',
-            borderRadius: '5px',
-            background: 'white',
-            //   position: 'relative',
-            boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',
-            justifyContent: 'space-between',
+            // justifyContent: 'space-between',
             '.gatsby-image-wrapper': {
               width: '100%',
               height: '100%',
             },
             ':hover': {
-              boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
-              transition: 'all 250ms ease',
+              img: {
+                boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
+                transition: 'all 350ms ease',
+              },
             },
-            transition: 'all 250ms ease',
+            transition: 'all 350ms ease',
           })}>
           <div
             css={css({
@@ -34,13 +31,14 @@ export default function ResourceBook(props) {
               },
               padding: '8px',
               color: '#464E55',
-              justifyContent: 'space-between',
+              // justifyContent: 'space-between',
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
+              gridTemplateColumns: '1fr 2fr',
+              alignSelf: 'start',
               h1: {
-                fontSize: '1.6em',
+                fontSize: '1.5em',
                 marginBottom: '16px',
-                lineHeight: '1.1em',
+                lineHeight: '1.2em',
               },
               h5: {
                 fontSize: '0.9em',
@@ -53,6 +51,7 @@ export default function ResourceBook(props) {
               },
               '.dataBlock': {
                 paddingLeft: '20px',
+                alignSelf: 'center',
               },
               '.description': {
                 lineHeight: '1.3em',
@@ -63,7 +62,20 @@ export default function ResourceBook(props) {
                 h1: { color: '#8748C7' },
               },
             })}>
-            <img src={props.img} />
+            <img
+              css={css({
+                padding: '10px',
+                maxWidth: '150px',
+                maxHeight: '200px',
+                alignSelf: 'center',
+                justifySelf: 'center',
+                borderRadius: '6px',
+                transition: 'all 350ms ease',
+                background: 'white',
+                boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',
+              })}
+              src={props.img}
+            />
             <div class='dataBlock'>
               <h1>{props.title}</h1>
               <h5>{props.author}</h5>
