@@ -232,7 +232,6 @@ export const resourceBooks = [
     topic: 'drawing',
     recommended: false,
   },
-
   {
     title: 'Creative Illustration',
     author: 'Andrew Loomis',
@@ -248,7 +247,7 @@ export const resourceBooks = [
     url:
       'https://www.goodreads.com/book/show/23389095-framed-ink-marcos-mateu-mestre',
     img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388990958l/2766647.jpg',
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1413576091l/23389095.jpg',
     topic: 'drawing',
     recommended: true,
   },
@@ -285,6 +284,15 @@ export const resourceBooks = [
     url: 'https://www.goodreads.com/book/show/6250465-drawn-to-life',
     img:
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355037566l/6250465.jpg',
+    topic: 'drawing',
+    recommended: true,
+  },
+  {
+    title: 'Fun with a Pencil',
+    author: 'Andrew Loomis',
+    url: 'https://www.goodreads.com/book/show/1027978.Fun_with_a_Pencil',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1207374284l/1027978.jpg',
     topic: 'drawing',
     recommended: true,
   },
