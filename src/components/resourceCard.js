@@ -11,18 +11,21 @@ export default function ResourceCard(props) {
           margin: '10px',
           alignSelf: 'start',
           borderRadius: '6px',
-          background: 'white',
-          boxShadow: '0px 0.5px 0.5px rgba(52, 61, 68, 0.1)',
+          background: 'rgba(253,252,252,1)',
+          border: '1px solid rgba(255,255,255,0.7)',
+          boxShadow: '-5px -5px 26px 0 rgba(255,255,255,1)',
+          boxShadow: '5px 5px 20px 0 rgba(218,224,228,1)',
           justifyContent: 'space-between',
           '.gatsby-image-wrapper': {
             width: '100%',
             height: '100%',
           },
           ':hover': {
-            boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
-            transition: 'all 250ms ease',
+            boxShadow: '1px 1px 4px 0 rgba(190,198,206,1)',
+            transition: 'all 0.4s ease',
+            transform: 'scale(0.99)',
           },
-          transition: 'all 1s ease',
+          transition: 'all 0.4s ease',
         })}>
         <Link to={props.url}>
           <div
