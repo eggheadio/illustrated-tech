@@ -70,28 +70,45 @@ export const resourceCourses = [
     recommended: false,
     recCourses: [
       {
-        title: 'Composition',
-        instructor: 'Bill Perkins',
-        url: '',
+        title: 'How to Draw Everything',
+        instructor: 'Jake Parker',
+        url: 'https://courses.svslearn.com/courses/how-to-draw-everything',
+      },
+      {
+        title: 'Basic Perspective Drawing',
+        instructor: 'David Hohn',
+        url: 'https://courses.svslearn.com/courses/basic-perspective-drawing',
+      },
+      {
+        title: 'Painting Color and Light',
+        instructor: 'Will Terry',
+        url: 'https://courses.svslearn.com/courses/paintingcolorandlight2',
+      },
+      {
+        title: 'Creative Composition',
+        instructor: 'Will Terry',
+        url:
+          'https://courses.svslearn.com/courses/creative-composition-updated',
       },
     ],
   },
   {
     title: 'Will Weston',
-    description: 'Will is a veteran',
+    description:
+      'Will is xyz. His instagram is a treasure trove of notes, blackboard lectures, and demos. He runs workshops a few times a year in Paris, LA, and NYC.',
     url: [
       'https://www.instagram.com/willwestonstudio',
-      'https://www.twitch.tv/peterhanstyle',
+      'https://drawingamerica.com/weston/',
     ],
     img: 'http://localhost:8000/images/resources/willweston.png',
-    cost: '-',
+    cost: '$65-95 videos / $600 IRL Courses',
     category: 'website',
     recommended: true,
   },
   {
     title: 'Draw a Box',
     description:
-      'A community favourite, this site walks you through the principals of the Dynamic Sketching tradition',
+      'A community favourite, this site walks you through the core concepts of Dynamic Sketching',
     url: 'https://drawabox.com/',
     img: 'http://localhost:8000/images/resources/drawabox.png',
     cost: 'Free!',
@@ -102,9 +119,12 @@ export const resourceCourses = [
     title: 'Modern Day James',
     description:
       'James is an independent creator running a patreon and selling individual gumroad courses. Focuses on concept design for games',
-    url: 'https://www.patreon.com/moderndayjames',
+    url: [
+      'https://www.patreon.com/moderndayjames',
+      'https://gumroad.com/moderndayjames',
+    ],
     img: 'http://localhost:8000/images/resources/moddayjames.png',
-    cost: '$5-30 Monthly',
+    cost: '$5-30 Monthly / $8-20 Videos',
     category: 'website',
     recommended: false,
   },
@@ -112,9 +132,9 @@ export const resourceCourses = [
     title: 'Ty Carter',
     description:
       'Another independent teacher, Ty is a background designer from the animation world creating tutorials on Patreon and Gumroad. Strong on lighting & colour theory, stylised illustration techniques, and visual design principals',
-    url: ['https://gumroad.com/tycarter'],
-    img: 'https://via.placeholder.com/400',
-    cost: '$5-30 Monthly',
+    url: ['https://gumroad.com/tycarter', 'https://www.patreon.com/tycarter'],
+    img: 'http://localhost:8000/images/resources/tycarter.png',
+    cost: '$10-200 Monthly / $25 Videos',
     category: 'website',
     recommended: false,
   },
@@ -123,17 +143,20 @@ export const resourceCourses = [
     title: 'Concept Design Academy',
     description: '-',
     url: 'http://conceptdesignacad.com/',
-    img: 'https://via.placeholder.com/400',
-    cost: '$750-800 per course',
+    img: 'http://localhost:8000/images/resources/cda.png',
+    cost: '$750-800 IRL Courses',
     category: 'IRL',
     recommended: false,
   },
   {
-    title: 'The Foundation Group',
+    title: 'Foundation Art Group',
     description: '-',
-    url: 'https://www.foundationartgroup.com/',
-    img: 'https://via.placeholder.com/400',
-    cost: '',
+    url: [
+      'https://www.foundationartgroup.com/',
+      'https://www.patreon.com/Foundation',
+    ],
+    img: 'http://localhost:8000/images/resources/foundation.png',
+    cost: '$5 Monthly',
     category: 'website',
     recommended: false,
   },
@@ -141,8 +164,8 @@ export const resourceCourses = [
     title: 'CGMA 2D Academy',
     description: '-',
     url: 'https://www.cgmasteracademy.com/',
-    img: 'https://via.placeholder.com/400',
-    cost: '$600-800 per course',
+    img: 'http://localhost:8000/images/resources/cgma.png',
+    cost: '$600-800 Online Courses',
     category: 'website',
     recommended: false,
   },
@@ -153,9 +176,39 @@ export const resourceCourses = [
       'https://www.instagram.com/peterhanstyle/',
       'https://www.twitch.tv/peterhanstyle',
     ],
-    img: 'https://via.placeholder.com/400',
+    img: 'http://localhost:8000/images/resources/peterhan.png',
+    cost: '$750-900 IRL Courses',
     category: 'person',
     recommended: false,
+  },
+  {
+    title: 'Art of Aaron Blaise',
+    description: '-',
+    url: 'https://creatureartteacher.com/',
+    img: 'http://localhost:8000/images/resources/aaronblaise.png',
+    cost: '$25 Monthly',
+    category: 'website',
+    recommended: false,
+    recCourses: [
+      {
+        title: 'Taking Control of Colour',
+        instructor: 'Ronnie Williford',
+        url:
+          'https://creatureartteacher.com/product/color-theory-class-ronnie-wiliford/',
+      },
+      {
+        title: 'Character Design',
+        instructor: 'Aaron Blaise',
+        url:
+          'https://creatureartteacher.com/product/character-design-course-aaron-blaise/',
+      },
+      {
+        title: 'Art of the Storyboard',
+        instructor: 'Lyndon Ruddy',
+        url:
+          'https://creatureartteacher.com/product/storyboard-course-with-lyndon-ruddy/',
+      },
+    ],
   },
 ]
 
@@ -179,32 +232,25 @@ export const resourceBooks = [
     topic: 'drawing',
     recommended: false,
   },
+
   {
-    title: 'Lateral Thinking',
-    author: 'Edward de Bono',
-    url: 'https://www.goodreads.com/book/show/10675.Lateral_Thinking',
+    title: 'Creative Illustration',
+    author: 'Andrew Loomis',
+    url: 'https://www.goodreads.com/book/show/2766647-creative-illustration',
     img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1416779115l/10675.jpg',
-    topic: 'visual thinking',
-    recommended: false,
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388990958l/2766647.jpg',
+    topic: 'drawing',
+    recommended: true,
   },
   {
-    title: 'Metaphors We Live By',
-    author: 'George Lakoff, Mark Johnson',
-    url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
+    title: 'Framed Ink: Drawing and Composition for Visual Storytellers',
+    author: 'Marco Mateu-Mestre',
+    url:
+      'https://www.goodreads.com/book/show/23389095-framed-ink-marcos-mateu-mestre',
     img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
-    topic: 'visual thinking',
-    recommended: false,
-  },
-  {
-    title: 'Thinkertoys',
-    author: 'Michael Michalko',
-    url: 'https://www.goodreads.com/book/show/517518.Thinkertoys',
-    img:
-      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320553080l/517518.jpg',
-    topic: 'visual thinking',
-    recommended: false,
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388990958l/2766647.jpg',
+    topic: 'drawing',
+    recommended: true,
   },
   {
     title: 'Sketching: Drawing Techniques for Product Designers',
@@ -241,6 +287,43 @@ export const resourceBooks = [
       'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1355037566l/6250465.jpg',
     topic: 'drawing',
     recommended: true,
+  },
+  {
+    title: 'Force: Dynamic Life Drawing for Animators',
+    author: 'Michael D. Mattesi',
+    url: 'https://www.goodreads.com/book/show/899923.Force',
+    img:
+      'https://image.isu.pub/170721044206-ae94e3bcecade533be7941b973c8b51b/jpg/page_1_thumb_large.jpg',
+    topic: 'drawing',
+    recommended: true,
+  },
+  {
+    title: 'Metaphors We Live By',
+    author: 'George Lakoff, Mark Johnson',
+    url: 'https://www.goodreads.com/book/show/34459.Metaphors_We_Live_By',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388194058l/34459._SX318_.jpg',
+    topic: 'visual thinking',
+    recommended: false,
+  },
+  {
+    title: 'Thinkertoys',
+    author: 'Michael Michalko',
+    url: 'https://www.goodreads.com/book/show/517518.Thinkertoys',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320553080l/517518.jpg',
+    topic: 'visual thinking',
+    recommended: false,
+  },
+
+  {
+    title: 'Lateral Thinking',
+    author: 'Edward de Bono',
+    url: 'https://www.goodreads.com/book/show/10675.Lateral_Thinking',
+    img:
+      'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1416779115l/10675.jpg',
+    topic: 'visual thinking',
+    recommended: false,
   },
 ]
 
