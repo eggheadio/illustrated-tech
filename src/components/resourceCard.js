@@ -2,8 +2,10 @@ import React from 'react'
 import { css } from '@emotion/core'
 import { bpMinSM, bpMinMD } from '../utils/breakpoints'
 import Link from './link'
+import RecCourses from './recCoursesCard'
 
 export default function ResourceCard(props) {
+  // console.log('props', props)
   return (
     <>
       <div
@@ -28,49 +30,54 @@ export default function ResourceCard(props) {
           },
           transition: 'all 0.4s ease',
         })}>
-        <Link to={props.url}>
-          <div
-            css={css({
-              justifyContent: 'space-between',
-              color: '#464E55',
-              transition: 'all 1s ease',
-              '.dataBlock': {
-                [bpMinSM]: { padding: '25px' },
-                padding: '10px',
-              },
+        <div
+          css={css({
+            justifyContent: 'space-between',
+            color: '#464E55',
+            transition: 'all 1s ease',
+            '.dataBlock': {
+              [bpMinSM]: { padding: '25px' },
+              padding: '10px',
+            },
+            h1: {
+              fontSize: '1.6em',
+            },
+            h5: {
+              textAlign: 'right',
+              fontSize: '0.8em',
+              letterSpacing: '0.1em',
+            },
+            img: {
+              height: 'auto',
+              maxWidth: '100%',
+              borderRadius: '6px 6px 0 0 ',
+              // [bpMinMD]: { width: '200%' },
+            },
+            '.description': {
+              lineHeight: '1.3em',
+              fontSize: '1em',
+            },
+            ':hover': {
               h1: {
-                fontSize: '1.6em',
+                color: '#8748C7',
               },
-              h5: {
-                textAlign: 'right',
-                fontSize: '0.8em',
-                letterSpacing: '0.1em',
-              },
-              img: {
-                height: 'auto',
-                maxWidth: '100%',
-                borderRadius: '6px 6px 0 0 ',
-                // [bpMinMD]: { width: '200%' },
-              },
-              '.description': {
-                lineHeight: '1.3em',
-                fontSize: '1em',
-              },
-              ':hover': {
-                h1: {
-                  color: '#8748C7',
-                },
-              },
-            })}>
+            },
+          })}>
+          <Link to={props.url}>
             <img src={props.img} />
+          </Link>
 
-            <div class='dataBlock'>
+          <div class='dataBlock'>
+            <Link to={props.url}>
               <h1>{props.title}</h1>
-              <p class='description'>{props.description}</p>
-              <h5>{props.cost}</h5>
-            </div>
+            </Link>
+
+            <p class='description'>{props.description}</p>
+            <h5>{props.cost}</h5>
+
+            {props.recCourses && <RecCourses props={props.recCourses} />}
           </div>
-        </Link>
+        </div>
       </div>
     </>
   )

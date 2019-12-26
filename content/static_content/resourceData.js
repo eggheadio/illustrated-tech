@@ -93,6 +93,35 @@ export const resourceCourses = [
     ],
   },
   {
+    title: 'Art of Aaron Blaise',
+    description: '-',
+    url: 'https://creatureartteacher.com/',
+    img: 'http://localhost:8000/images/resources/aaronblaise.png',
+    cost: '$25 Monthly',
+    category: 'website',
+    recommended: false,
+    recCourses: [
+      {
+        title: 'Taking Control of Colour',
+        instructor: 'Ronnie Williford',
+        url:
+          'https://creatureartteacher.com/product/color-theory-class-ronnie-wiliford/',
+      },
+      {
+        title: 'Character Design',
+        instructor: 'Aaron Blaise',
+        url:
+          'https://creatureartteacher.com/product/character-design-course-aaron-blaise/',
+      },
+      {
+        title: 'Art of the Storyboard',
+        instructor: 'Lyndon Ruddy',
+        url:
+          'https://creatureartteacher.com/product/storyboard-course-with-lyndon-ruddy/',
+      },
+    ],
+  },
+  {
     title: 'Will Weston',
     description:
       'Will is xyz. His instagram is a treasure trove of notes, blackboard lectures, and demos. He runs workshops a few times a year in Paris, LA, and NYC.',
@@ -180,35 +209,6 @@ export const resourceCourses = [
     cost: '$750-900 IRL Courses',
     category: 'person',
     recommended: false,
-  },
-  {
-    title: 'Art of Aaron Blaise',
-    description: '-',
-    url: 'https://creatureartteacher.com/',
-    img: 'http://localhost:8000/images/resources/aaronblaise.png',
-    cost: '$25 Monthly',
-    category: 'website',
-    recommended: false,
-    recCourses: [
-      {
-        title: 'Taking Control of Colour',
-        instructor: 'Ronnie Williford',
-        url:
-          'https://creatureartteacher.com/product/color-theory-class-ronnie-wiliford/',
-      },
-      {
-        title: 'Character Design',
-        instructor: 'Aaron Blaise',
-        url:
-          'https://creatureartteacher.com/product/character-design-course-aaron-blaise/',
-      },
-      {
-        title: 'Art of the Storyboard',
-        instructor: 'Lyndon Ruddy',
-        url:
-          'https://creatureartteacher.com/product/storyboard-course-with-lyndon-ruddy/',
-      },
-    ],
   },
 ]
 

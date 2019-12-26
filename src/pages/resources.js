@@ -51,6 +51,7 @@ export default function ResourcesPage() {
                   img={d.img}
                   cost={d.cost}
                   url={d.url}
+                  recCourses={d.recCourses}
                 />
               )
             })}
