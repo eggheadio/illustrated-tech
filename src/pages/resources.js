@@ -38,7 +38,7 @@ export default function ResourcesPage() {
           <div
             css={css({
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr) )',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr) )',
               alignItems: 'center',
             })}>
             {resourceCourses.map((d, i) => {
