@@ -1,6 +1,6 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { bpMinSM, bpMinMD } from '../utils/breakpoints'
+import { bpMinSM } from '../utils/breakpoints'
 import Link from './link'
 import RecCourses from './recCoursesCard'
 
@@ -15,7 +15,6 @@ export default function ResourceCard(props) {
           borderRadius: '6px',
           background: 'rgba(253,252,252,1)',
           border: '1px solid rgba(255,255,255,0.7)',
-          boxShadow: '-5px -5px 26px 0 rgba(255,255,255,0.6)',
           boxShadow: '5px 5px 20px 0 rgba(218,224,228,0.6)',
           justifyContent: 'space-between',
           '.gatsby-image-wrapper': {
@@ -64,7 +63,7 @@ export default function ResourceCard(props) {
             },
           })}>
           <Link to={props.url}>
-            <img src={props.img} />
+            <img alt='{props.title}' src={props.img} />
           </Link>
 
           <div class='dataBlock'>

@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import Img from 'gatsby-image'
-import { StaticQuery, graphql } from 'gatsby'
+// import Img from 'gatsby-image'
+// import { StaticQuery, graphql } from 'gatsby'
 import { bpMinSM } from '../utils/breakpoints'
 import Link from './link'
 
@@ -74,6 +74,7 @@ export default function ResourceBook(props) {
                 background: 'white',
                 boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.05)',
               })}
+              alt='book cover'
               src={props.img}
             />
             <div class='dataBlock'>

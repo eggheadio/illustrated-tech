@@ -16,23 +16,32 @@ function RecCourses(props) {
     <div
       css={css({
         hr: {
-          margin: '18px auto',
+          margin: '18px 0 10px',
           maxWidth: '100%',
+          border: '0.5px solid #BECCD6',
         },
         h5: {
           display: 'inline-block',
+          fontSize: '0.9em',
+          margin: '0',
         },
         button: {
+          margin: '0',
           display: 'inline-block',
+          background: 'none',
+          paddingRight: '10px',
+        },
+        div: {
+          transition: 'all 1s',
         },
       })}>
       <hr />
-      <h5>Recommended Courses</h5>
       <button
         aria-label='Click to view recommended courses'
         onClick={toggleDropdown}>
-        <img src={downArrow} />
+        <img alt='down arrow' src={downArrow} />
       </button>
+      <h5>Recommended Courses</h5>
       {isDowndownOpen
         ? props.props.map((rc, index) => (
             <div key={index}>
