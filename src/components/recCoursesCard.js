@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { css } from '@emotion/core'
 import Link from './link'
 import downArrow from './downArrow.svg'
+// import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 function RecCourses(props) {
   const [isDowndownOpen, setDropdown] = useState(false)
@@ -42,6 +43,7 @@ function RecCourses(props) {
         onClick={toggleDropdown}>
         Recommended Courses
       </h5>
+
       {isDowndownOpen
         ? props.props.map((rc, index) => (
             <div

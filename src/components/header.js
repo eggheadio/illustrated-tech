@@ -117,9 +117,9 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
       <Link to='/faq' css={linkStyle}>
         FAQ
       </Link>
-      <Link to='/resources' css={linkStyle}>
+      {/* <Link to='/resources' css={linkStyle}>
         Resources
-      </Link>
+      </Link> */}
       <Link to='/about' css={linkStyle}>
         About
       </Link>
