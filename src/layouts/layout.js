@@ -7,6 +7,7 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 import '@reach/skip-nav/styles.css'
+import Transition from '../components/transition'
 
 export const globalStyles = css({
   ...reset,
@@ -32,12 +33,14 @@ const Layout = ({
       <SkipNavLink style={{ zIndex: 2 }} />
       <Header background={background} scrollToFooter={scrollToFooter} />
       <SkipNavContent>
-        <div
-          css={css({
-            background: background,
-          })}>
-          {children}
-        </div>
+        <Transition location={location}>
+          <div
+            css={css({
+              background: background,
+            })}>
+            {children}
+          </div>
+        </Transition>
       </SkipNavContent>
       <Footer noSubscribe={noSubscribe} forwardedRef={footerRef} />
     </>
