@@ -114,11 +114,14 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
         justifyContent: 'space-around',
         alignItems: 'center',
       })}>
-      <Link to='/about' css={linkStyle}>
-        About
-      </Link>
       <Link to='/faq' css={linkStyle}>
         FAQ
+      </Link>
+      <Link to='/resources' css={linkStyle}>
+        Resources
+      </Link>
+      <Link to='/about' css={linkStyle}>
+        About
       </Link>
       <Subbutton
         css={css({

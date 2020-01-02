@@ -20,19 +20,11 @@ function RecCourses(props) {
           maxWidth: '100%',
           border: '0.5px solid #BECCD6',
         },
-        h5: {
-          display: 'inline-block',
-          fontSize: '0.9em',
-          margin: '0',
-        },
         button: {
           margin: '0',
           display: 'inline-block',
           background: 'none',
           paddingRight: '10px',
-        },
-        div: {
-          transition: 'all 1s',
         },
       })}>
       <hr />
@@ -41,14 +33,39 @@ function RecCourses(props) {
         onClick={toggleDropdown}>
         <img alt='down arrow' src={downArrow} />
       </button>
-      <h5>Recommended Courses</h5>
+      <h5
+        css={css({
+          display: 'inline-block',
+          fontSize: '0.9em',
+          margin: '0',
+        })}
+        onClick={toggleDropdown}>
+        Recommended Courses
+      </h5>
       {isDowndownOpen
         ? props.props.map((rc, index) => (
-            <div key={index}>
+            <div
+              css={css({
+                margin: '6px 0',
+                p: {
+                  fontSize: '0.92em',
+                  margin: '0',
+                  display: 'inline-flex',
+                  paddingRight: '4px',
+                },
+                h5: {
+                  display: 'inline-flex',
+                  fontSize: '0.8em',
+                  textTransform: 'none',
+                  letterSpacing: '0',
+                  margin: '0',
+                },
+              })}
+              key={index}>
               <Link to={rc.url}>
                 <p>{rc.title}</p>
               </Link>
-              <h5>{rc.instructor}</h5>
+              <h5>by {rc.instructor}</h5>
             </div>
           ))
         : null}
