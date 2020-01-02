@@ -48,8 +48,13 @@ class SketchesTemplate extends React.Component {
             })}>
             <div
               css={css({
-                maxWidth: '900px',
-                margin: '0 auto',
+                background: 'white',
+                [bpMinSM]: { padding: '30px 20px', margin: '0' },
+                padding: '10px 20px',
+                marginTop: '40px',
+                borderRadius: '2px',
+                boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
+                clear: 'both',
               })}>
               <h1
                 css={css({
@@ -105,20 +110,18 @@ class SketchesTemplate extends React.Component {
                     color: 'hsla(200, 10%, 30%, 0.7)',
                   },
                 })}>
-                <Link to={`/${previous.frontmatter.slug}`} rel='previous'>
-                  <h4
-                    css={css({
-                      opacity: '0.6',
-                    })}>
-                    previous
-                  </h4>
-                  <h2
-                    css={css({
-                      opacity: '0.8',
-                      fontWeight: '100',
-                      fontFamily: 'ff-tisa-web-pro, serif',
-                      fontSize: '1.5em',
-                      fontStyle: 'italic',
+                <p
+                  css={css({
+                    color: '#7D8EB0',
+                    textAlign: 'center',
+                    fontSize: '1em',
+                  })}>
+                  {sketches.frontmatter.date}
+                </p>
+                <h1
+                  css={css({
+                    [bpMinMD]: {
+                      fontSize: '3rem',
                       marginBottom: '80px',
                     })}>
                     <svg
@@ -187,6 +190,7 @@ export const pageQuery = graphql`
         title
         tags
         slug
+        date(formatString: "MMMM DD, YYYY")
         description
         thumbnail {
           childImageSharp {

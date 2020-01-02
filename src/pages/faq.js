@@ -35,7 +35,14 @@ export default function FAQPage() {
           })}>
           <div
             css={css({
-              maxWidth: '660px',
+              [bpMinSM]: {
+                padding: '15px',
+              },
+              background: 'white',
+              padding: '30px 60px',
+              borderRadius: '2px',
+              boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
+              clear: 'both',
               margin: '0 auto',
             })}>
             <FAQ />

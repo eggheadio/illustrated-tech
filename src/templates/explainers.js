@@ -39,8 +39,8 @@ class ExplainerTemplate extends React.Component {
             <div
               css={css({
                 background: 'white',
-                [bpMinMD]: { padding: '80px 20px', margin: '0' },
-                padding: '40px 20px',
+                [bpMinSM]: { padding: '30px 20px', margin: '0' },
+                padding: '10px 20px',
                 marginTop: '40px',
                 borderRadius: '2px',
                 boxShadow: '0px 1px 2px rgba(52, 61, 68, 0.1)',
@@ -51,6 +51,14 @@ class ExplainerTemplate extends React.Component {
                   maxWidth: '780px',
                   margin: '0 auto',
                 })}>
+                <p
+                  css={css({
+                    color: '#7D8EB0',
+                    textAlign: 'center',
+                    fontSize: '1em',
+                  })}>
+                  {explainer.frontmatter.date}
+                </p>
                 <h1
                   css={css({
                     [bpMinSM]: {
@@ -60,10 +68,12 @@ class ExplainerTemplate extends React.Component {
                     textAlign: 'center',
                     fontWeight: '100',
                     marginBottom: '40px',
+                    marginTop: '20px',
                     fontFamily: 'ff-tisa-web-pro, serif',
                   })}>
                   {explainer.frontmatter.title}
                 </h1>
+
                 <MDXProvider components={mdxComponents}>
                   <MDXRenderer>{explainer.body}</MDXRenderer>
                 </MDXProvider>
@@ -189,6 +199,7 @@ export const pageQuery = graphql`
         tags
         slug
         description
+        date(formatString: "MMMM DD, YYYY")
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 500) {

@@ -65,6 +65,11 @@ const MainCardGrid = ({ posts }) => {
                   fontWeight: '700',
                   textTransform: 'uppercase',
                   color: '#6284A3',
+                  transition: 'all 0.5s ease',
+                  ':hover': {
+                    background: '#20B5D5',
+                    color: '#fff',
+                  },
                 })}
                 key={c}
                 onClick={() => handleCategoryClick(c)}>

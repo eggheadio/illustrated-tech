@@ -53,6 +53,10 @@ const Header = ({ background, scrollToFooter }) => {
           css={css({
             [bpMinMD]: { display: 'none' },
             [bpMaxMD]: { display: 'block' },
+            ':focus, :active': {
+              outline: 'none',
+              border: 'none',
+            },
           })}>
           <div
             aria-hidden='true'
@@ -114,6 +118,9 @@ const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
         justifyContent: 'space-around',
         alignItems: 'center',
       })}>
+      <Link to='/about' innerRef={firstNavRef} css={linkStyle}>
+        About
+      </Link>
       <Link to='/faq' css={linkStyle}>
         FAQ
       </Link>
