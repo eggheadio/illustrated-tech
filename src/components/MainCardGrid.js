@@ -3,7 +3,7 @@ import { css } from '@emotion/core'
 import get from 'lodash/get'
 import includes from 'lodash/includes'
 import isEmpty from 'lodash/isEmpty'
-import { bpMinSM } from '../utils/breakpoints'
+import { bpMinSM, bpBtnFlexSM, bpBtnFlexMD } from '../utils/breakpoints'
 import Link from './link'
 import Card from './card'
 
@@ -47,24 +47,78 @@ const MainCardGrid = ({ posts }) => {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           alignItems: 'center',
+	    [bpBtnFlexMD]: { marginBottom: '10px' },
         })}>
-        <p>Illustrated Articles & Sketchnotes</p>
-        <span css={css({ justifySelf: 'end' })}>
+        <p>Illustrated Explainers & Sketchnotes</p>
+        <span css={css({ justifySelf: 'end',
+						[bpBtnFlexMD]: {
+							display:'flex',
+							flexDirection: 'column',
+							width: '100%',
+						},
+			 })}>
+          <button
+            css={css({
+              alignSelf: 'end',
+              padding: '8px 20px',
+              margin: '4px',
+              border: 'none',
+              background: currentCategory === ALL_CATEGORY ? '#A1B7CB' : '#fff',
+              borderRadius: '24px',
+              fontFamily: 'brandon-grotesque, sans-serif',
+              fontSize: '14px',
+              letterSpacing: '0.1em',
+              fontWeight: '700',
+              textTransform: 'uppercase',
+              color: currentCategory === ALL_CATEGORY ? '#fff' : '#6284A3',
+              transition: 'all 0.5s ease',
+              ':hover': {
+                background: '#20B5D5',
+                color: '#fff',
+		   },
+		   [bpBtnFlexMD]: {
+			alignSelf: 'flex-end',
+			width: '80%',
+		   },
+		   [bpBtnFlexSM]: {
+			alignSelf: 'stretch',
+			 width: '100%',
+	         },
+            })}
+            key={ALL_CATEGORY}
+            onClick={() => handleCategoryClick(ALL_CATEGORY)}>
+            All Posts
+          </button>
           {categories.map(c => {
             return (
               <button
                 css={css({
+                  alignSelf: 'end',
                   padding: '8px 20px',
                   margin: '4px',
                   border: 'none',
-                  background: 'rgba(255, 255, 255, 0.7)',
+                  background: currentCategory === c ? '#20B5D5' : '#fff',
                   borderRadius: '24px',
                   fontFamily: 'brandon-grotesque, sans-serif',
                   fontSize: '14px',
                   letterSpacing: '0.1em',
                   fontWeight: '700',
                   textTransform: 'uppercase',
-                  color: '#A6BFC8',
+                  color: currentCategory === c ? '#fff' : '#6284A3',
+                  transition: 'all 0.5s ease',
+                  ':hover': {
+                    background: '#20B5D5',
+                    color: '#fff',
+                  },
+			[bpBtnFlexMD]: {
+				alignSelf: 'flex-end',
+				width: '80%',
+			},
+			[bpBtnFlexSM]: {
+				alignSelf: 'stretch',
+			 	width: '100%',
+			},
+
                 })}
                 key={c}
                 onClick={() => handleCategoryClick(c)}>
@@ -85,9 +139,7 @@ function Grid({ posts, currentCategory }) {
       css={css({
         display: 'grid',
         gridGap: '25px',
-
-        gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr) )',
-
+        gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr) )',
         a: {
           color: 'inherit',
         },

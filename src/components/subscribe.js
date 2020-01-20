@@ -3,8 +3,8 @@ import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { css } from '@emotion/core'
 import { bpMinMD } from '../utils/breakpoints'
-//import Message from '../ConfirmMessage/Message'
-//import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
+// import Message from '../ConfirmMessage/Message'
+// import { PleaseConfirmIllustration } from '../ConfirmMessage/Illustrations'
 
 const FORM_ID = process.env.CONVERTKIT_SIGNUP_FORM
 
@@ -17,14 +17,21 @@ const SubscribeSchema = Yup.object().shape({
 
 const PostSubmissionMessage = ({ response }) => {
   return (
-    <div>
-      Great, one last thing...
-      {/* <Message
-        illustration={PleaseConfirmIllustration}
-        title={`Great, one last thing...`}
-        body={`I just sent you an email with the confirmation link. 
-          **Please check your inbox!**`}
-      /> */}
+    <div
+      css={css({
+        padding: '2em 0 1em',
+        h3: {
+          color: '#fff',
+        },
+        p: {
+          color: '#9FB3C7',
+        },
+      })}>
+      <h3>Thanks for joining!</h3>
+      <p>
+        I just sent you an email with the confirmation link – please check your
+        inbox.
+      </p>
     </div>
   )
 }

@@ -15,6 +15,12 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-remark-images',
     {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve(`./src/layouts/layout.js`),
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         globalScope: `
@@ -22,9 +28,9 @@ module.exports = {
           import { TwitterTweetEmbed } from "react-twitter-embed";
           export default { ResponsiveEmbed, TwitterTweetEmbed };
         `,
-        defaultLayouts: {
-          default: here('./src/components/layout.js'),
-        },
+        // defaultLayouts: {
+        //   default: here('./src/layouts/layout.js'),
+        // },
         gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
@@ -93,8 +99,8 @@ module.exports = {
       options: {
         name: 'Illustrated.dev',
         short_name: 'Illustrated.dev',
-        background_color: '#3FCCDC',
-        theme_color: '#3FCCDC',
+        background_color: '#7A44BB',
+        theme_color: '#7A44BB',
         display: 'minimal-ui',
         icon: 'src/images/id_favicon.svg', // This path is relative to the root of the site.
       },
@@ -127,7 +133,7 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({query: {site, allMdx}}) => {
+            serialize: ({ query: { site, allMdx } }) => {
               return allMdx.edges.map(edge => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.description,
@@ -137,7 +143,7 @@ module.exports = {
                   enclosure: {
                     url: `${site.siteMetadata.title}${edge.node.frontmatter.thumbnail.childImageSharp.original.src}`,
                   },
-                  custom_elements: [{'content:encoded': edge.node.html}],
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
                 })
               })
             },
@@ -145,7 +151,7 @@ module.exports = {
               {
                 allMdx(
                   sort: { order: ASC, fields: [frontmatter___featured, frontmatter___date] }
-                  filter: { fields: { collection: { eq: "wtf" } } }
+                  filter: { fields: { category: { eq: "explainers" } } }
                 ) {
                   edges {
                     node {
@@ -158,7 +164,7 @@ module.exports = {
                         slug
                         title
                         description
-                        type
+                        category
                         featured
                         thumbnail {
                           childImageSharp {

@@ -1,13 +1,14 @@
 import React from 'react'
 import Link from './link'
 import Subbutton from './subbutton'
-import {css} from '@emotion/core'
+import { css } from '@emotion/core'
 import Container from './container'
-import {bpMinMD, bpMinSM, bpMaxMD} from '../utils/breakpoints'
+import { bpMinMD, bpMinSM, bpMaxMD } from '../utils/breakpoints'
 import VisuallyHidden from '@reach/visually-hidden'
 import Hamburger from './hamburger'
+import logo from '../images/id_logo.svg'
 
-const Header = ({background, scrollToFooter}) => {
+const Header = ({ background, scrollToFooter }) => {
   const [menuOpen, setMenuOpen] = React.useState(false)
   const toggleMenu = () => setMenuOpen(value => !value)
   return (
@@ -26,39 +27,22 @@ const Header = ({background, scrollToFooter}) => {
           textTransform: 'uppercase',
           margin: 0,
         },
-      })}
-    >
+      })}>
       <Container
         noVerticalPadding
         css={css({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-        })}
-      >
-        <h1>
-          <Link
-            css={css({
-              borderRadius: '4px',
-              color: 'rgb(79, 88, 95)',
-              [bpMinSM]: {
-                border: '2px solid #FFFFFF',
-                padding: '15px 20px',
-              },
-              padding: '0px',
-              fontWeight: '700',
-            })}
-            to="/"
-          >
-            Illustrated.dev
-          </Link>
-        </h1>
+        })}>
+        <Link to='/'>
+          <img src={logo} alt='Illustrated.dev logo' />
+        </Link>
 
         {/* Nav Grid Layout */}
-
         <button
           onClick={toggleMenu}
-          aria-haspopup="true"
+          aria-haspopup='true'
           aria-expanded={menuOpen}
           css={css({
             padding: 0,
@@ -67,11 +51,10 @@ const Header = ({background, scrollToFooter}) => {
             opacity: '.8',
             background: 'none',
             border: 'none',
-            [bpMinMD]: {display: 'none'},
-            [bpMaxMD]: {display: 'block'},
-          })}
-        >
-          <div aria-hidden="true">
+            [bpMinMD]: { display: 'none' },
+            [bpMaxMD]: { display: 'block' },
+          })}>
+          <div aria-hidden='true'>
             <Hamburger />
           </div>
           <VisuallyHidden>Toggle Nav</VisuallyHidden>
@@ -79,19 +62,17 @@ const Header = ({background, scrollToFooter}) => {
         <div
           css={css({
             display: 'none',
-            [bpMinMD]: {display: 'block'},
-          })}
-        >
+            [bpMinMD]: { display: 'block' },
+          })}>
           <NavLinks scrollToFooter={scrollToFooter} />
         </div>
       </Container>
       {menuOpen && (
         <Container
           css={css({
-            [bpMinMD]: {display: 'none'},
-            [bpMaxMD]: {display: 'block'},
-          })}
-        >
+            [bpMinMD]: { display: 'none' },
+            [bpMaxMD]: { display: 'block' },
+          })}>
           <NavLinks scrollToFooter={scrollToFooter} focusFirstLink />
         </Container>
       )}
@@ -99,12 +80,12 @@ const Header = ({background, scrollToFooter}) => {
   )
 }
 
-const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
+const NavLinks = ({ scrollToFooter = () => {}, focusFirstLink = false }) => {
   const linkStyle = css({
     float: 'right',
     boxSizing: 'border-box',
     borderRadius: '4px',
-    color: 'rgb(79, 88, 95)',
+    color: '#62749C',
     [bpMinMD]: {
       padding: '15px 20px',
       display: 'block',
@@ -126,15 +107,20 @@ const NavLinks = ({scrollToFooter = () => {}, focusFirstLink = false}) => {
         display: 'flex',
         justifyContent: 'space-around',
         alignItems: 'center',
-      })}
-    >
-      <Link to="/about" css={linkStyle}>
+      })}>
+      <Link to='/about' innerRef={firstNavRef} css={linkStyle}>
         About
+      </Link>
+      <Link to='/resources' css={linkStyle}>
+        Resources
+      </Link>
+      <Link to='/faq' css={linkStyle}>
+        FAQ
       </Link>
       <Subbutton
         css={css({
-          [bpMinMD]: {display: 'block'},
-          [bpMaxMD]: {display: 'none'},
+          [bpMinMD]: { display: 'block' },
+          [bpMaxMD]: { display: 'none' },
         })}
         onClick={scrollToFooter}
       />

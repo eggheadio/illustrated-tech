@@ -3,33 +3,26 @@ import { css } from '@emotion/core'
 import Img from 'gatsby-image'
 import { bpMinSM, bpMinMD, bpMinLG } from '../utils/breakpoints'
 
-const Card = ({
-  title,
-  image = [],
-  description,
-  category,
-  date,
-  tags = [],
-  featured,
-  children,
-}) => {
+const Card = ({ title, image = [], description, category, date, featured }) => {
   let categoryColor
   if (category === 'explainers') {
-    categoryColor = '#7053AE'
+    categoryColor = '#7A44BB'
   } else if (category === 'meta') {
     categoryColor = '#B8CB44'
   } else if (category === 'sketchnotes') {
-    categoryColor = '#3FCCDC'
+    categoryColor = '#2EAED0'
   }
 
   return (
     <div
       css={css({
         [bpMinSM]: {
-          height: '450px',
+          height: '100%',
           flexDirection: featured ? 'row' : 'column',
+          padding: '0',
         },
-        padding: '5px',
+        padding: '20px',
+        borderRadius: '5px',
         borderTop: featured ? `4px solid ${categoryColor}` : 'none',
         background: 'white',
         position: 'relative',
@@ -56,6 +49,7 @@ const Card = ({
           height: featured ? 'auto' : '20px',
           lineHeight: '1.2',
           marginBottom: '0',
+          paddingTop: '0',
           display: 'inline-block',
         },
         p: {
@@ -75,6 +69,12 @@ const Card = ({
           display: 'none',
           margin: 0,
         },
+        '.date': {
+          fontSize: '0.9em',
+          display: 'flex',
+          marginTop: '4px',
+          color: '#7D8EB0',
+        },
         ':hover': {
           boxShadow: '0 10px 30px -10px rgba(0,0,0,0.15)',
           transition: 'all 250ms ease',
@@ -93,7 +93,7 @@ const Card = ({
       <div
         css={css({
           [bpMinSM]: {
-            padding: featured ? '40px 40px 40px 40px' : '40px 40px 0 40px',
+            padding: featured ? '40px 40px 40px 40px' : '25px 25px 0 25px',
           },
           paddingBottom: 0,
           display: featured && 'flex',
@@ -101,16 +101,16 @@ const Card = ({
           justifyContent: 'space-between',
         })}>
         <h1>{title}</h1>
+        <p className='date'>{date}</p>
         {featured && <p className='description'>{description}</p>}
       </div>
       <div
         css={css({
           display: 'flex',
-          justifyContent: 'flex-end',
-          alignItems: 'flex-end',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
         })}>
         <Img fluid={image} />
-        {children}
       </div>
     </div>
   )

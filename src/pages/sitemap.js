@@ -2,34 +2,31 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import styled from '@emotion/styled'
 import Link from '../components/link'
-import Layout from '../components/layout'
 
-export default function SiteMap({ data: { wtf, meta } }) {
+export default function SiteMap({ data: { explainers, meta } }) {
   return (
-    <Layout>
-      <Main>
-        <h1>Table of Contents</h1>
+    <Main>
+      <h1>Table of Contents</h1>
 
-        <h2>Illustrated Articles</h2>
-        {wtf.edges.map(({ node: data }) => (
-          <div>
-            <h3>
-              <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
-            </h3>
-            <p>{data.excerpt}</p>
-          </div>
-        ))}
-        <h2>The Metalayer</h2>
-        {meta.edges.map(({ node: data }) => (
-          <div>
-            <h3>
-              <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
-            </h3>
-            <p>{data.excerpt}</p>
-          </div>
-        ))}
-      </Main>
-    </Layout>
+      <h2>Illustrated Articles</h2>
+      {explainers.edges.map(({ node: data }) => (
+        <div>
+          <h3>
+            <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
+          </h3>
+          <p>{data.excerpt}</p>
+        </div>
+      ))}
+      <h2>The Metalayer</h2>
+      {meta.edges.map(({ node: data }) => (
+        <div>
+          <h3>
+            <Link to={`/${data.fields.slug}`}>{data.frontmatter.title}</Link>
+          </h3>
+          <p>{data.excerpt}</p>
+        </div>
+      ))}
+    </Main>
   )
 }
 
@@ -61,9 +58,9 @@ export const pageQuery = graphql`
         title
       }
     }
-    wtf: allMdx(
+    explainers: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "wtf" } } }
+      filter: { fields: { category: { eq: "explainers" } } }
     ) {
       edges {
         node {
@@ -74,7 +71,7 @@ export const pageQuery = graphql`
             }
           }
           fields {
-            collection
+            category
             slug
           }
           excerpt(pruneLength: 50)
@@ -86,7 +83,7 @@ export const pageQuery = graphql`
     }
     meta: allMdx(
       sort: { order: ASC, fields: fields___slug }
-      filter: { fields: { collection: { eq: "meta" } } }
+      filter: { fields: { category: { eq: "meta" } } }
     ) {
       edges {
         node {
@@ -97,7 +94,7 @@ export const pageQuery = graphql`
             }
           }
           fields {
-            collection
+            category
             slug
           }
           excerpt(pruneLength: 50)

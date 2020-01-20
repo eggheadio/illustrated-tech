@@ -18,7 +18,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       )}`,
     })
     createNodeField({
-      name: 'collection',
+      name: 'category',
       node,
       value: _.get(parent, 'sourceInstanceName'),
     })
@@ -48,7 +48,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
@@ -72,12 +72,13 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
                     slug
                     date
+                    category
                   }
                 }
               }
@@ -100,12 +101,12 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
                     slug
-                    type
+                    category
                   }
                 }
               }
@@ -125,7 +126,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   excerpt(pruneLength: 250)
                   fields {
-                    collection
+                    category
                   }
                   frontmatter {
                     title
@@ -170,11 +171,16 @@ exports.createPages = ({ graphql, actions }) => {
           })
         })
 
-        sketchnotes.forEach(({ node }) => {
+        sketchnotes.forEach(({ node }, index) => {
+          const next =
+            index === sketchnotes.length - 1
+              ? null
+              : sketchnotes[index + 1].node
+          const previous = index === 0 ? null : sketchnotes[index - 1].node
           createPage({
             path: `${node.frontmatter.slug}`,
             component: path.resolve(`./src/templates/sketchnotes.js`),
-            context: { id: node.id },
+            context: { id: node.id, previous, next },
           })
         })
 

@@ -88,7 +88,7 @@ h1 {
   margin: 0.67em 0;
 }
 mark {
-  background-color: #3fccdc;
+  background-color: #7a44bb;
   color: rgb(48, 49, 51);
 }
 small {
@@ -135,6 +135,7 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+  border: none;
 }
 optgroup {
   font-weight: 700;
@@ -146,6 +147,10 @@ input {
 button,
 select {
   text-transform: none;
+}
+button:focus {
+  outline: none;
+  border: none;
 }
 [type='reset'],
 [type='submit'],
@@ -272,7 +277,7 @@ h3 {
   margin-bottom: 1.45rem;
   color: inherit;
   font-size: 1.7rem;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 h4 {
   margin-left: 0;
@@ -340,7 +345,7 @@ ul {
 }
 li {
   list-style-position: outside;
-  list-style-image: url(./bullet.svg);
+  list-style-image: url(../components/bullet.svg);
   line-height: 1.8rem;
   font-size: 1.2rem;
   font-family: 'ff-tisa-web-pro', serif;
@@ -393,7 +398,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  border: 1px solid #3fccdc;
+  border: 1px solid #7a44bb;
   overflow: auto;
   border-radius: 3px;
   word-wrap: break-word;
