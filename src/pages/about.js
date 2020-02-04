@@ -55,42 +55,48 @@ const AboutPage = () => {
               css={css({
                 marginTop: '0.4em',
                 lineHeight: '1.2em',
-                textAlign: 'center',
+                fontSize: '2em',
               })}>
-              Illustrated.dev explains web development through illustration.
+              Illustrated.dev explains web development & technology topics. With
+              a little bit of anthropology mixed in.
             </h2>
             <div
               css={css({
-                maxWidth: '540px',
                 margin: '0 auto',
                 marginTop: '40px',
               })}>
               <p>
-                Most of these illustrated articles are on JavaScript
-                fundamentals. Because those never go out of style. But you'll
-                also find a few on newer tools like React, Babel, and D3.
+                This project exists to help explain web technologies in a more
+                intitutive and visual way. Visual metaphors are a wonderfully
+                effective learning tool for the world of programming. All the
+                abstract jargon & syntax is much easier to understand when you
+                can <i>see</i> what's happening through diagrams and analogies.
               </p>
               <p>
-                I make these because the front-end world is overflowing with
-                confounding things to learn (and JavaScript in particular is
+                I make these because technology in general, and the front-end
+                world in particular, is overflowing with confounding things to
+                learn (and JavaScript is especially
                 <span
                   aria-label='fire, banana, star, and crossbones emojis'
                   role='img'>
                   {' '}
                   🔥🍌🌟☠{' '}
                 </span>{' '}
-                ridiculous sometimes).
+                -ing ridiculous).
               </p>
               <p>
-                Visual metaphors are a wonderfully effective learning tool for
-                the world of programming. All the abstract jargon & syntax is
-                much easier to understand when you can <i>see</i> what's
-                happening through diagrams and analogies.
+                You'll find plenty of JavaScript fundamentals here - those never
+                go out of style. As well as posts on a whole range of
+                web-related technologies like API's, React, and GraphQL.
               </p>
               <p>
-                Not to mention it's a hell of a lot more interesting than
-                slogging through some fat textbook.
+                There's also a slight anthropological bent to some of these
+                posts. While I now live in the world of programmers, I
+                originally trained as an anthropologist and still see everything
+                through lens of cultural constructs, kinship structures,
+                cosmologies, and semiotics.
               </p>
+              <p>It's a weird mix - take it as you will.</p>
             </div>
             <div css={css({ display: 'flex', alignItems: 'center' })}>
               <Img
