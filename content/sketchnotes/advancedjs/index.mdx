@@ -18,42 +18,46 @@ No one begins their JavaScript journey by reading [the TC39 language specificati
 
 Instead we all cobble together a good-enough understanding, leaving holes here and there to fill in later.
 
-But at some point, you need to peek back at those holes.
+So far I've stumbled along without 100% grokking prototypical inheritance, or how `call, apply,` and `bind` work on functions.  
+It's fine. Stuff mostly works. Until it doesn't  ¯\_(ツ)_/¯
 
-[Tyler Clark](https://twitter.com/iamtylerwclark)'s latest course on [Advanced JavaScript Foundations](https://egghead.io/courses/advanced-javascript-foundations?rc=272bjb) is exactly that hole-filling opportunity.
+But at some point, it's useful to stop stumbling about and  peek back at those holes.
 
-<a target="_blank" href="https://egghead.io/courses/advanced-javascript-foundations?rc=272bjb">
+[Tyler Clark](https://twitter.com/iamtylerwclark)'s latest course on [Advanced JavaScript Foundations](https://egghead.io/courses/advanced-javascript-foundations?af=54fd64) is exactly that hole-filling opportunity.
+
+<a target="_blank" href="https://egghead.io/courses/advanced-javascript-foundations?af=54fd64">
 
 <img alt="Course illustration of a building with a bright yellow foundation floor for advanced javascript foundations" style="max-width: 100%" src="https://og-image-egghead-course.now.sh/advanced-javascript-foundations" />
 
  </a>
 
-Tyler runs through all the details that are usually skipped over in beginners tutorials. The ones that make a huge difference when you're deep in a debugging session, and can't figure out where the f🍪🍩k `this` is pointing and why all your results are `undefined`.
-
-So far I've stumbled along without 100% grokking `this` or prototypical inheritance.
-It's fine. Stuff mostly works. Until it doesn't  ¯\_(ツ)_/¯
-Thankfully, I'm a lot less hesitant and stumbley after making these notes. 
-
-The hardest thing about JavaScript is not knowing JavaScript.
-
+Tyler runs through all the details that usually get skipped over in beginners tutorials.  The ones that make a huge difference when you're deep in a debugging session, and can't figure out where the f🍪🍩k `this` is pointing and why all your results are `undefined`.
 
 <hr />
 
-Fluff fluff fluff
+Here's some of my sketch notes from the course – they include plenty of DNA inheritence metaphors 🧬 and a few cups of caffiene to keep you alert.
 
-Fluff fluff fluff
+<br />
 
-![](./AdvancedJS_1@2x.png)
+![Advanced Js fundamentals title slide](./AdvancedJS_1@2x.png)
 
-![](./AdvancedJS_2@2x.png)
+![The primitive types are not objects, have no methods, and can't be mutated.](./AdvancedJS_2@2x.png)
 
-![](./AdvancedJS_3@2x.png)
+![Prototypes are how we do inheritance in JS. They're linked objects of parents and children that pass down inherited properties. All JS objects are made from a default prototye that includes the __proto__ property](./AdvancedJS_3@2x.png)
 
-![](./AdvancedJS_4@2x.png)
+![.prototype is different to __proto__. It's a method on a function that points to a constructor object.](./AdvancedJS_5.png)
+
+<br />
+
+![The this keyword points to an object based on the execution cotext of where a function is called, not where it's defined.](./AdvancedJS_4@2x.png)
+
+<br />
+
+Hopefully these gave you a sense of the main concepts, and a small map of where your own JavaScript 🕳 holes are (or lack of holes if you've already diligently filled them in!) 
 
 ---
 
-<FullSketchnote coursename="Advanced JavaScript Fundamentals" courselink="http://bit.ly/advanjs">
+<FullSketchnote coursename="Advanced JavaScript Fundamentals" courselink="https://egghead.io/courses/advanced-javascript-foundations?af=54fd64">
 
 ![](./AdvancedJS--small.png)
 
