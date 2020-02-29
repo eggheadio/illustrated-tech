@@ -1,5 +1,5 @@
 ---
-date: 2020-02-04
+date: 2020-03-02
 title: How to Draw Invisible Programming Concepts - Part 1
 description: null
 thumbnail: ./thumb@2x.png
@@ -18,8 +18,8 @@ import Center from '../../../src/components/mdx/Center.js'
 import Tooltip from '../../../src/components/mdx/Tooltip.js'
 import ImageGrid from '../../../src/components/mdx/ImageGrid.js'
 import TwoCol from '../../../src/components/mdx/TwoCol.js'
-
----
+import ReadNext from '../../../src/components/mdx/ReadNext.js'
+import InlineSignUp from '../../../src/components/inlineSubscribe.js'
 
 <SmallCenter>
 
@@ -35,7 +35,7 @@ It spans everything from <Link to="https://en.wikipedia.org/wiki/Conceptual_meta
 
 ## An Introduction
 
-If anyone is new, here's the TLDR:
+If anyone is new to my website or work, here's the TLDR:
 I'm <Link to="http://maggieappleton.com/">Maggie</Link> and I make all the things on this site. For the last half decade I've also been the art director & lead illustrator over at <Link to="https://egghead.io">egghead</Link>.
 
 We're a company / website / collection of humans who teach web development. We use a mix of tutorial videos, code challenges, articles, illustrated notes, workshops, and whatever other medium we feel like. 
@@ -133,7 +133,7 @@ One I'm slightly obsessed with.
 Drawing well is difficult in its own right. Making a dog look like a dog or hand look like a hand requires a lot of training, practice and patience. 
 It's a whole extra challenge to figure out what the _thing_ you're going to draw is in the first place.
 
-How do you take a historically-constructed, fuzzy-edged, evolving cultural concept like "Web Security," and condense it down to a single image?
+How do you take a fuzzy-edged, evolving cultural concept like "Web Security," and condense it down to a single image?
 
 The answer, in short, is a mix of **cultural symbols** and **visual metaphor**. Though there's a little more to it than that.
 
@@ -154,7 +154,7 @@ This happens in every industry – the most visible top layer of any creation fe
 
 So let's get the tool talk out of the way. Here's my tech stack:
 
-![](Techtools.png)
+![Photos of a macbook pro, a cintiq drawing tablet, an ipad pro, and the app logos for procreate, illustrator, and photoshop](Techtools.png)
 
 I do all my brainstorming and sketching in <Link to="https://procreate.art/">Procreate</Link> on an iPad Pro 12.5"
 Once I'm ready to make the final, I use a combination of Adobe Illustrator and Photoshop. My main machine is a Macbook Pro 2015. It's hooked up to a <Link to="https://www.wacom.com/en-us/products/pen-displays/cintiq-22-hd">Wacom Cintiq 22HD</Link> monitor that allows me to hand-paint in details.
@@ -255,14 +255,15 @@ Taken literally, programming involves running enormously complex sequences of el
 That world isn't human friendly. We can't see what's going on, or control what happens, without a thick layer of symbolic software in the middle.
 
 So we invented programming languages.  
-`const fruit = banana` _maps onto_ a specfic set of electrical pulses firing deep inside the hardware
+The JavaScript snippet `let fruit = banana` _maps onto_ a specific set of electrical pulses firing deep inside your hardware.
 
-It is, in other words, a metaphor.  
-All of programming is *one giant metaphor.* <Tooltip tiptext={<span>Here's a terribly nerdy MIT PhD thesis about it if you want to go down the rabbit hole... <Link to="http://alumni.media.mit.edu/~mt/thesis/mt-thesis.html">Programming with Agents: New metaphors for thinking about computation</Link></span>}>6</Tooltip>
+In programmer land this is called an _abstraction_.  
 
-My point is that metaphor is native to programming.  We already work in a tower of abstractions, each one further from machine world and closer to human world.  
+Funnily enough, it also fits our definition of a metaphor. ll of programming is giant stack of layered metaphors. <Tooltip tiptext={<span>Here's a terribly nerdy MIT PhD thesis about it if you want to go down the rabbit hole... <Link to="http://alumni.media.mit.edu/~mt/thesis/mt-thesis.html">Programming with Agents: New metaphors for thinking about computation</Link></span>}>6</Tooltip>
 
-These illustrations are one more layer on top of the human-friendly stack.
+My point is that metaphor is native to programming.  This tower of abstractions move us further from machine world, and closer to human world.  
+
+Illustrated metaphors that capture the main idea of a programming concept are one more layer on top of the human-friendly stack.
 
 <br />
 
@@ -274,9 +275,9 @@ These illustrations are one more layer on top of the human-friendly stack.
 
 ### Learning to Metaphorically See
 
-Now that you're thoroughly soaked in trippy metaphor theory, let's bring it back down the earth with some familiar examples.
+Now that you're thoroughly soaked in trippy metaphor theory, let's bring it back down to earth with some familiar examples.
 
-One way to hone your metaphor-making skills is explicitly notice when you're seeing one. We process metaphors automatically and unconsciously. Which means it takes a little effort to consciously understand how they work.
+One way to hone your metaphor-making skills is to explicitly notice when you're seeing one. We process metaphors automatically and unconsciously. Which means it takes a little effort to consciously understand how they work.
 
 Let's take another look at some of these course illustrations, and work backwards to break down each piece of the metaphor.
 
@@ -346,10 +347,17 @@ The justice system <span role="img" aria-label="target">🎯</span> is a set of 
 A challenge <span role="img" aria-label="target">🎯</span> is a maze <span role="img" aria-label="source">⛲️</span> . Following the traditional rules <span role="img" aria-label="target">🎯</span> is getting to the centre of a maze by walking between the hedges <span role="img" aria-label="source">⛲️</span> . Improvisation <span role="img" aria-label="target">🎯</span> is getting to the center by mowing a path through the hedges <span role="img" aria-label="source">⛲️</span> .
 </Feature>
 
+<hr/>
+
 Knowing how to build a good metaphor isn't only useful for illustration.  
-Metaphors come in many forms. You can write metaphors into tutorials and documentation. You can explain a piece of technology to a non-technical co-worker. Or you can finally find a meaningful way to tell your mother what you actually do for work. Other than "computers."
+Metaphors come in many forms. You can write metaphors into tutorials and documentation. You can explain a piece of technology to a non-technical co-worker. Or you can finally find a meaningful way to tell your mother what you actually do for work. (other than "computers").
 
-In Part Two I'll dive into my specific techniques for creating metaphors.  
-We'll cover doing cultural and linguistic research to find existing metaphors, building new ones up from core qualities, and using lateral thinking to generate weird and original metaphors.
+In Part Two I'll dive into more specific techniques for creating metaphors.  
+We'll cover how to do cultural and linguistic research to find existing metaphors. We'll also work through building new metaphors by focusing on core qualities of a concept, and using lateral thinking to generate alternative solutions.  Look out for it later this month.
 
-## [Read Part 2](http://localhost:8000/drawinginvisibles2)
+<br />
+
+<InlineSignUp />
+
+<!-- 
+<ReadNext title="Read Part 2" subtitle="How to do Cultural and Linguistic Research" /> -->
