@@ -37,11 +37,15 @@ function SEO({ description, lang, meta, keywords, title, image }) {
               },
               {
                 name: 'twitter:card',
-                content: 'summary'
+                content: 'summary_large_image'
               },
               {
                 name: 'twitter:creator',
                 content: data.site.siteMetadata.author
+              },
+              {
+                name: 'twitter:site',
+                content: '@mappletons'
               },
               {
                 name: 'twitter:title',
